@@ -6,7 +6,6 @@ Array.prototype.unique = function() {
     });
 }
 
-
 function removeDuplicates(num) {
   var x,
       len=num.length,
