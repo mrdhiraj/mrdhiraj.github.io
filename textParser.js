@@ -6,6 +6,23 @@ var btnTables = document.getElementById("btnTables");
 
 btnComments.onclick = getComments;
 btnTables.onclick = getTables;
+btnDistinct.onclick =getDistincts;
+
+
+function getDistincts() {
+    var intxt = document.getElementById("mainttxt").value.toUpperCase();
+    var outtxt = ''; 
+    var myStringArray = intxt.split("\n");
+    if (myStringArray) {
+        myStringArray=removeDuplicates(myStringArray);
+        var arrayLength = myStringArray.length;
+
+        for (var i = 0; i < arrayLength; i++) {
+            outtxt = outtxt + '\n' + myStringArray[i] ;
+        }
+    }
+    document.getElementById("outtxt").value = outtxt ;
+}
 
 function getComments() {
     var intxt = document.getElementById("mainttxt").value;
@@ -26,33 +43,7 @@ function getComments() {
     document.getElementById("outtxt").value = outtxt;
     }
 
-    //localStorage.setItem("lastname", "Smith!!!!!!!!!!!!!!!!");
-    // Retrieve
-    //document.getElementById("outtxt").value = localStorage.getItem("lastname");
-}
-
-Array.prototype.unique = function() {
-    return this.filter(function(value, index, self) {
-        return self.indexOf(value) === index;
-    
-       
-    });
-}
-
-
-function removeDuplicates(num) {
-  var x,
-      len=num.length,
-      out=[],
-      obj={};
- 
-  for (x=0; x<len; x++) {
-    obj[num[x]]=0;
-  }
-  for (x in obj) {
-    out.push(x);
-  }
-  return out;
+   
 }
 
 
