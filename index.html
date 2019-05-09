@@ -1,36 +1,50 @@
 <html>
+
 <head>
-<link rel="stylesheet" type="text/css" href="mystyle.css">
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
 </head>
+
 <body>
-<table>
-<tbody>
-<tr>
-<td>
-      Find<textarea rows="2" cols="20" id="findtxt"></textarea></br></br>
-      Delimiter  <textarea rows="1" cols="20" id="delimitertxt">,</textarea>
-</td>
-<td> 
-      In <textarea rows="10" cols="120" id="mainttxt"></textarea> 
-</td>
-</tr>
-<tr>
-<td>
-      Replace <textarea rows=20 cols="20" id="replacetxt"></textarea>
-</td>
-<td>
-      Out  <textarea rows="10" cols="120" id="outtxt"></textarea>
-</td>
-</tr>
-</tbody>
-</table>
-<button id="btnReplace" item-width="500">Replace</button>
-<button id="btnCollon" item-width="500">Collonize</button>
-<button id="btnComments" item-width="500">Comments</button>
-<button id="btnTables" item-width="500">Tables</button>
-<button id="btnDistinct" item-width="500">Distinct</button>
-<script src="script.js"></script>
-<script src="textParser.js"></script>
-<script src="standardFunctions.js"></script>
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    Find
+                    <br>
+                    <textarea rows="2" cols="20" id="findtxt"></textarea>
+                    </br>
+                    </br>
+                    Delimiter
+                    <br>
+                    <textarea rows="1" cols="20" id="delimitertxt">,</textarea>
+                    <br>
+                    <br>
+                    Replace
+                    <br>
+                    <textarea rows=20 cols="20" id="replacetxt"></textarea>
+                </td>
+                <td>
+                    In
+                    <br>
+                    <textarea rows="10" cols="120" id="mainttxt"></textarea>
+                    <br>
+                    <br>
+                    Out
+                    <br>
+                    <textarea rows="10" cols="120" id="outtxt"></textarea>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button id="btnReplace">Replace</button>
+    <button id="btnCollon">Collonize</button>
+    <button id="btnComments">Comments</button>
+    <button id="btnTables">Tables</button>
+    <button id="btnDistinct">Distinct</button>
+    <script src="script.js"></script>
+    <script src="textParser.js"></script>
+    <script src="standardFunctions.js"></script>
 </body>
+
 </html>
