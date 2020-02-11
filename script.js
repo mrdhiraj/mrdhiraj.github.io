@@ -8,14 +8,17 @@ function doCollonize() {
     var findtxt = document.getElementById("mainttxt").value;
     var lines = findtxt.split("\n");
     var outtxt = "";
-
-    for (x in lines) {
-        var item = lines[x];
+for (i = 0; i < lines.length; i++) {
+  var item = lines[i];
         if (item.length > 0) {
-
-            outtxt += "'" + item.trim() + "',\n";
+            if (i==lines.length-1){
+            outtxt += "'" + item.trim() +"'" ;
+            }
+            else{
+                outtxt += "'" + item.trim() + "',\n";
+            }
         }
-    }
+}
 
     document.getElementById("outtxt").value = outtxt;
 }
