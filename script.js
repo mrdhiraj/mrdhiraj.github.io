@@ -1,7 +1,7 @@
 var btnReplace = document.getElementById("btnReplace");
 var btncollonize = document.getElementById("btnCollon");
 
-btnReplace.onclick = doAction;
+btnReplace.onclick = doReplace;
 btncollonize.onclick = doCollonize;
 
 function doCollonize() {
@@ -23,15 +23,15 @@ for (i = 0; i < lines.length; i++) {
     document.getElementById("outtxt").value = outtxt;
 }
 
-function doAction() {
+function doReplace() {
     var findtxt = document.getElementById("findtxt").value;
     var delimitertxt = document.getElementById("delimitertxt").value;
-    var replacetxt = document.getElementById("replacetxt").value;
-    var maintxt = document.getElementById("mainttxt").value;
+    var maintext = document.getElementById("mainttxt").value;
+    var templatetxt = document.getElementById("templatetxt").value;
     var outtxt = "";
 
     var findS = findtxt.split(delimitertxt);
-    var lines = replacetxt.split("\n");
+    var lines = maintext.split("\n");
     var temp;
     var x;
     if (findS.length < 1) {
@@ -41,7 +41,7 @@ function doAction() {
         var item = lines[x];
         if (item.length > 0) {
             var lstitemS = item.trim().split(delimitertxt);
-            temp = maintxt;
+            temp = templatetxt;
             var loop = lstitemS.length;
             if (findS.length < loop) {
                 loop = findS.length;
@@ -53,7 +53,7 @@ function doAction() {
                 var re = new RegExp(findS[i].trim(),'g');
                 temp = temp.replace(re, lstitemS[i]);
             }
-            outtxt += temp + "\n" + "\n";
+            outtxt += temp +  "\n";
         }
     }
     document.getElementById("outtxt").value = outtxt;
