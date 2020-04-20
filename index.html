@@ -1,62 +1,47 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-164000035-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164000035-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'UA-164000035-1');
-</script>
+        gtag('config', 'UA-164000035-1');
+    </script>
 
 </head>
 
 <body>
-<div class='container'>
-    <table>
-        <tbody>
-            <tr>
-                <td>
-                    Find
-                    <br>
-                    <textarea rows="2" cols="20" id="findtxt"></textarea>
-                    </br>
-                    </br>
-                    Delimiter
-                    <br>
-                    <textarea rows="1" cols="20" id="delimitertxt">,</textarea>
-                    <br>
-                    <br>
-                    Template
-                    <br>
-                    <textarea rows=20 cols="20" id="templatetxt"></textarea>
-                </td>
-                <td valign="Top">
-                    Text
-                    <br>
-                    <textarea rows="10" cols="120" id="mainttxt"></textarea>
-                    <br>
-                    <br>
-                    Out
-                    <br>
-                    <textarea rows="10" cols="120" id="outtxt"></textarea>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-    <button id="btnReplace">Replace</button>
-    <button id="btnCollon">Collonize</button>
-    <button id="btnComments">Comments</button>
-    <button id="btnTables">Tables</button>
-    <button id="btnDistinct">Distinct</button>
+    
+        <button id="btnReplace">Replace</button>
+        <button id="btnCollon">Collonize</button>
+        <button id="btnComments">Comments</button>
+        <button id="btnTables">Tables</button>
+        <button id="btnDistinct">Distinct</button>
+        <button id ="btncopy">Copy Output</button>
+        <div class='container'> 
+       
+            <textarea rows="1" cols="20" id="findtxt" placeholder="Find"></textarea>
+            <textarea rows="1" cols="3" id="delimitertxt" placeholder="Delimiter">,</textarea>
+            <div>
+                <textarea rows=2 cols="120" id="templatetxt" placeholder="Template"></textarea>
+                <textarea rows="5" cols="120" id="mainttxt" placeholder="Main Text"></textarea>
+                <textarea rows="5" cols="120" id="outtxt" placeholder="Output"></textarea>
+            </div>
+        </div>
+
+    <script src="standardFunctions.js"></script>
     <script src="script.js"></script>
     <script src="textParser.js"></script>
-    <script src="standardFunctions.js"></script>
+   
 </body>
 
 </html>

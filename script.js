@@ -4,6 +4,13 @@ var btncollonize = document.getElementById("btnCollon");
 btnReplace.onclick = doReplace;
 btncollonize.onclick = doCollonize;
 
+btncopy.onclick =copyOutput;
+
+function copyOutput()
+{
+    copy_to_clipboard('outtxt')
+}
+
 function doCollonize() {
     var findtxt = document.getElementById("mainttxt").value;
     var lines = findtxt.split("\n");

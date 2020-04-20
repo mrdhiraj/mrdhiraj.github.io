@@ -21,3 +21,8 @@ function removeDuplicates(num) {
   return out;
 }
 
+function copy_to_clipboard(id)
+{
+    document.getElementById(id).select();
+    document.execCommand('copy');
+}
