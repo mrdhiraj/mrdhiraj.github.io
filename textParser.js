@@ -12,12 +12,12 @@ function getDistincts() {
     if (myStringArray) {
         myStringArray=removeDuplicates(myStringArray);
         var arrayLength = myStringArray.length;
-
+        myStringArray = myStringArray.sort()
         for (var i = 0; i < arrayLength; i++) {
-            outtxt = outtxt + '\n' + myStringArray[i] ;
+            outtxt =  outtxt + '\n' + myStringArray[i] ;
         }
     }
-    document.getElementById("outtxt").value = outtxt ;
+    document.getElementById("outtxt").value = outtxt.trim() ;
 }
 
 function getComments() {
