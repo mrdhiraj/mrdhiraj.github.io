@@ -4,7 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    
+    <link rel="stylesheet" href="mystyle.css">
 
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -20,6 +20,7 @@
 </head>
 
 <body>
+<div class='container'> 
     
         <button id="btnReplace">Replace</button>
         <button id="btnCollon">Collonize</button>
@@ -27,14 +28,18 @@
         <button id="btnTables">Tables</button>
         <button id="btnDistinct">Distinct</button>
         <button id ="btncopy">Copy Output</button>
-        <div class='container'> 
-       
-            <textarea rows="1" cols="20" id="findtxt" placeholder="Find"></textarea>
+        
+       <div class='hor'>
+       <label>Delimiter</label>
             <textarea rows="1" cols="3" id="delimitertxt" placeholder="Delimiter">,</textarea>
-            <div>
-                <textarea rows=2 cols="120" id="templatetxt" placeholder="Template"></textarea>
-                <textarea rows="5" cols="120" id="mainttxt" placeholder="Main Text"></textarea>
-                <textarea rows="5" cols="120" id="outtxt" placeholder="Output"></textarea>
+            <textarea rows="1" cols="20" id="findtxt" placeholder="Find"></textarea>
+            
+            <textarea rows=2  cols="80"  id="templatetxt" placeholder="Template"></textarea>
+       </div>
+            <div class='ver'>
+               
+                <textarea rows="9" width=100% id="mainttxt" placeholder="Input"></textarea>
+                <textarea rows="9"  width=100%  id="outtxt" placeholder="Output"></textarea>
             </div>
         </div>
 

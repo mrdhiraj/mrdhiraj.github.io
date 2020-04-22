@@ -6,12 +6,27 @@ body {
     padding: 0;
 }
 
-.container>* {
+.container {
     display: block;
-    width: 50%;
-    margin-left: 10px;
-    margin-right: 10px;
-    max-height: 100%;
+    flex-direction: row;
+    padding:10px
+    /* 2 COL LAYOUT */
+}
+
+
+.ver {
+    display: flex;
+    flex-direction: column;
+    padding:10px
+    /* 2 COL LAYOUT */
+}
+
+
+.hor {
+    display: flex;
+    flex-direction: row;
+    padding:10px
+    /* 2 COL LAYOUT */
 }
 
 html {
