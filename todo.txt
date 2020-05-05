@@ -1,4 +1,4 @@
 UI clean up
 script clean up
 -Make template instead of replace
--Local storage
+-Local storage to dave templates
