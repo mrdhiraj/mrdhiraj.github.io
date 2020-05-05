@@ -95,7 +95,14 @@ function someDefaultTemplates()
         type:"default",
         time: new Date().getTime()
     }
-
     localStorage.setItem('SELECT', JSON.stringify(item));
+
+        var item = {
+        templatetxt: "<>,",
+        findtxt: "<>",
+        type:"default",
+        time: new Date().getTime()
+    }
+    localStorage.setItem('Numeric Collonize', JSON.stringify(item));
 
 }
