@@ -17,18 +17,44 @@ function renderTemplates() {
     templates = {
         ...localStorage
     }
-    for (template in templates) {
+
+    //need to sort before renderTemplates
+    var json_data = templates
+    var result = [];
+
+for(var i in json_data){
+    result.push([i, json_data [i]]);
+}
+
+people2 = sortJSON(result, 'time');
+
+   // for (template in people2)
+for (let i = 0; i < people2.length; i++) 
+     {
+
         //var t = document.getElementById("templates");
         //t.insertAdjacentHTML("afterend", "<button onClick = \"templateClicked('"+template+"')\">" +template+ "</button>");
 
         var t = document.createElement('div');
-        t.innerHTML = template;
+        t.innerHTML = people2[i][0];
         t.setAttribute('class','template')
         t.addEventListener('click', templateClicked, true);
 
         document.getElementById("templates").appendChild(t);
     }
 }
+
+function sortJSON(data, key) {
+    return data.sort(function (a, b) {
+        av = JSON.parse(a[1])
+        bv=JSON.parse(b[1])
+
+        var x = bv.time;
+        var y = av.time;
+        return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+    });
+}
+
 
 function templateClicked(tname) {
     templatename = tname.srcElement.innerText
@@ -51,23 +77,25 @@ function saveTemplate() {
     var findtxt = document.getElementById("findtxt").value;
 
     var item = {
-        templatename: templatename,
+        time: new Date().getTime(),
         templatetxt: templatetxt,
         findtxt: findtxt
     }
-
-    var s = JSON.stringify(item)
-    localStorage.setItem(templatename, s);
+    localStorage.setItem(templatename, JSON.stringify(item));
     }
     renderTemplates()
 }
 
+someDefaultTemplates()
+function someDefaultTemplates()
+{
+    var item = {
+        templatetxt: "SELECT * FROM <TABLE> ;",
+        findtxt: "<TABLE>",
+        type:"default",
+        time: new Date().getTime()
+    }
 
-// var v=  localStorage.getItem("tt");
-// var item = JSON.parse(v)
+    localStorage.setItem('SELECT', JSON.stringify(item));
 
-// var templatetxt = item.templatetxt
-// var findtxt = item.findtxt
-
-// document.getElementById("templatetxt").value = templatetxt
-// document.getElementById("findtxt").value = findtxt     
+}
