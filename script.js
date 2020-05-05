@@ -12,6 +12,7 @@ function copyOutput() {
 
 renderTemplates()
 function renderTemplates() {
+     document.getElementById("templates").innerHTML=''
 
     templates = {
         ...localStorage
@@ -45,6 +46,7 @@ function templateClicked(tname) {
 
 function saveTemplate() {
     templatename = prompt('Give a name...')
+    if(templatename){
     var templatetxt = document.getElementById("templatetxt").value;
     var findtxt = document.getElementById("findtxt").value;
 
@@ -56,6 +58,8 @@ function saveTemplate() {
 
     var s = JSON.stringify(item)
     localStorage.setItem(templatename, s);
+    }
+    renderTemplates()
 }
 
 
