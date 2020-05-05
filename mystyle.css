@@ -29,6 +29,7 @@ body {
     /* 2 COL LAYOUT */
 }
 
+
 html {
     overflow-x: hidden;
 }
@@ -66,6 +67,25 @@ button {
 }
 
 button:hover {
+    background-color: #4CBF52; /* Green */
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+ 
+
+.template {
+    background-color: #7f9c81; /* #801e00 */
+    border: aliceblue;
+    color: white;
+    padding: 10px 32px;
+    text-align: left;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.template:hover {
     background-color: #4CBF52; /* Green */
     color: white;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);

@@ -11,7 +11,10 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164000035-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
 
         gtag('config', 'UA-164000035-1');
@@ -20,34 +23,39 @@
 </head>
 
 <body>
-<div class='container'> 
-    
+    <div class='container'>
+
         <button id="btnReplace">Replace</button>
         <button id="btnCollon">Collonize</button>
         <button id="btnComments">Comments</button>
         <button id="btnTables">Tables</button>
         <button id="btnDistinct">Distinct</button>
-        <button id ="btncopy">Copy Output</button>
-        
-       <div class='hor'>
-       <label>Delimiter</label>
+        <button id="btncopy">Copy Output</button>
+
+        <div class='hor'>
+            <label>Delimiter</label>
             <textarea rows="1" cols="3" id="delimitertxt" placeholder="Delimiter">,</textarea>
             <textarea rows="1" cols="20" id="findtxt" placeholder="Find"></textarea>
-            
-            <textarea rows=2  cols="80"  id="templatetxt" placeholder="Template"></textarea>
-            <button id ="btnSaveTemplate">Save</button>
-       </div>
-            <div class='ver'>
-               
-                <textarea rows="9" width=100% id="mainttxt" placeholder="Input"></textarea>
-                <textarea rows="9"  width=100%  id="outtxt" placeholder="Output"></textarea>
-            </div>
-        </div>
 
+            <textarea rows=2 cols="80" id="templatetxt" placeholder="Template"></textarea>
+            <button id="btnSaveTemplate">Save</button>
+        </div>
+        <div class='hor'>
+            <div class = 'ver'>
+                 <div id="templates" class='template'></div>
+            </div>
+            <div class = 'ver'>
+                <textarea rows="9" cols="100" width=100% id="mainttxt" placeholder="Input"></textarea>
+                <textarea rows="9" width=100% id="outtxt" placeholder="Output"></textarea>
+            </div>
+             
+           
+        </div>
+    </div>
+   
     <script src="standardFunctions.js"></script>
     <script src="textParser.js"></script>
     <script src="script.js"></script>
-   
-</body>
 
+</body>
 </html>
