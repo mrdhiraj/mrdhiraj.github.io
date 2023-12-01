@@ -1,0 +1,4 @@
+<input v-model="options" type ="checkbox" id = "reverse" value ="reverse">
+<input v-model="options" type ="checkbox" id = "reverse" value ="reverse">
+
+options array

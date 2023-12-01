@@ -1,0 +1,87 @@
+<body>
+    <div id="app">
+<span>
+    <input type="button" id="var1CP" name="var1CP" value="+" v-on:click="myth(1)">
+    <table>
+       <tr>
+         <td colspan="2" align="center">Plr</td>
+          <td><input type="number" id="plrs" v-model="plrs" />
+             
+      </tr>
+      <tr>
+        <td colspan="2" align="center">Swaya</td>
+         <td><input type="checkbox" id="swaya1" v-model="swaya1" />
+           <label for="checkbox">1</label></td>
+           <td><input type="checkbox" id="swaya2" v-model="swaya2" />
+               <label for="checkbox">2</label></td>
+               <td><input type="checkbox" id="swaya3" v-model="swaya3" />
+                   <label for="checkbox">3</label></td>
+                   <td><input type="checkbox" id="swaya4" v-model="swaya4" />
+                       <label for="checkbox">4</label></td>
+                       <td><input type="checkbox" id="swaya5" v-model="swaya5" />
+                           <label for="checkbox">5</label></td>
+                           <td><input type="checkbox" id="swaya6" v-model="swaya6" />
+                               <label for="checkbox">6</label></td>        
+     </tr>
+     <tr>
+        <td colspan="2" align="center">Material</td>
+         <td><input type="number" min="1" max="5" id="mal1" v-model="mal1" />
+           
+           <td><input type="number" min="1" max="5" id="mal2" v-model="mal2" />
+              
+               <td><input type="number" min="1" max="5" id="mal3" v-model="mal3" />
+                 
+                   <td><input type="number" min="1" max="5" id="mal4" v-model="mal4" />
+                  
+                       <td><input type="number" min="1" max="5" id="mal5" v-model="mal5" />
+                          
+                           <td><input type="number" min="1" max="5" id="mal6" v-model="mal6" />
+                            
+     </tr>
+     <tr>
+        <td colspan="2" align="center">Jit</td>
+
+        <td><input type="radio" name="jit" v-model="jit1" />
+           
+            <td><input type="radio" name="jit" v-model="jit2" />
+               
+                <td><input type="radio"  name="jit" v-model="jit3" />
+                  
+                    <td><input type="radio" name="jit" v-model="jit4" />
+                   
+                        <td><input type="radio" name="jit"  v-model="jit5" />
+                           
+                            <td><input type="radio" name="jit"  v-model="jit6" />
+
+
+         
+                            
+     </tr>
+
+     <tr>
+        <td colspan="2" align="center">Final</td>
+         <td><input type="number" min="1" max="5" id="final1" v-model="final1" />
+           
+           <td><input type="number" min="1" max="5" id="final2" v-model="final2" />
+              
+               <td><input type="number" min="1" max="5" id="final3" v-model="final3" />
+                 
+                   <td><input type="number" min="1" max="5" id="final4" v-model="final4" />
+                  
+                       <td><input type="number" min="1" max="5" id="final5" v-model="final5" />
+                          
+                           <td><input type="number" min="1" max="5" id="final6" v-model="final6" />
+                            
+     </tr>
+
+
+    </table>
+    {{mal1}}
+  {{totalm}}
+</span>
+</div>
+
+
+    <script src="Vue.js"></script>
+    <script src="calc.js"></script>
+</body>
