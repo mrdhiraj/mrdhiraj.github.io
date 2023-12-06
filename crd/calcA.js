@@ -2,6 +2,7 @@ var app = new Vue({
     el: '#app',
     data :{
         noofplrs :2,
+        swaya[]
         swaya1 :false,
         swaya2 :false,
         swaya3 :false,

@@ -1,0 +1,13 @@
+v-model.trim
+v-model.lazy : to make it submit only after hit enter or tab
+v-model.number : modify to number
+
+
+
+.stop : stop propagation
+.self : only if target is self
+.once : singel exection
+
+
+short hand for v-bind is :
+:style ="{'font-size': fontSize + 'px'}>

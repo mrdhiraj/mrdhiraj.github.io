@@ -1,0 +1,5 @@
+v-on:
+
+@click.prevent
+
+@keydown.enter = "editIndes =-1"

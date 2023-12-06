@@ -1,0 +1,5 @@
+method 1:console.log(backpack.color)
+
+
+method 2: var query="color"
+console.log(backpack[propname])

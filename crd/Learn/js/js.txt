@@ -1,0 +1,14 @@
+Now we can import and expot js modules
+
+
+
+file 1
+...
+export default backpacks
+
+
+file 2
+import backpacks from "./bakcpacks.js";
+
+file 3
+<script type ="module" src ="" >

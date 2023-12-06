@@ -1,0 +1,17 @@
+document is the html
+
+
+eg:
+
+1.document.body.innerHTML
+
+DOM
+Document object model
+
+css query selector , returns js object
+2.document.querySelector(param)
+para examples
+	"main" <- html tag 
+	".classname"
+	"#idname"
+3.document.querySeletorAll()

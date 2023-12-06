@@ -1,0 +1,17 @@
+<div v-for ="card in cards" >
+	<div v-text="card.front"></div>
+</div>
+
+
+
+<div v-for ="(card,index) in cards" >
+	<div @click="editIndex = index" v-text="card.front"></div>
+</div>
+
+
+data(){
+return{
+cards,
+editIndex:-1
+}
+}

@@ -1,0 +1,6 @@
+<h2 v-if="fliped" v-text="front" >
+<h2 v-else-if="back" v-text="front" >
+<h2 v-else v-text="front" >
+
+
+<h2 v-show="fliped" v-text="front" >

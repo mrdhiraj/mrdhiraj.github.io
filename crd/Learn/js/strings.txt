@@ -1,0 +1,5 @@
+template literal
+
+Back tick is the trick!
+
+const a = `hello ${var}`

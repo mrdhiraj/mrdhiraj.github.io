@@ -1,0 +1,1 @@
+<div :class ="{class1 : var1, class2:var2}></div>

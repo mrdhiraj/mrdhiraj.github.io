@@ -1,0 +1,30 @@
+custom element can be created
+
+eg 
+<read-more :url ="readmoreurl"></read-more>
+
+
+
+app.component('read-more',
+{
+	template : '<a href =url'> Read </a>,
+	name: 'abc',
+        props :['url']
+}
+);
+
+app.mount('#app');
+
+
+
+
+
+with web packs templates can be separate html files
+we need to use props to share data between child and the parent component
+Events can be defined
+
+Single file components
+Needs web pack or vue cli
+
+read vue document 
+

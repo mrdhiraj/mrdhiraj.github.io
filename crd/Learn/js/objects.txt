@@ -1,0 +1,34 @@
+[var , let] 
+const objectname={
+propertyname : "propertyvalue",
+nestedobject:{
+battery:40,
+color:"red",
+lidOpen:false,
+functionname: function (parameter)
+{
+this.lidOpen = lidStatus;
+},
+}
+};
+
+//use camelCase
+
+
+
+[var , let] 
+const backpack ={
+name : "dec",
+volume: 30,
+light:{
+battery:40,
+color:"red",
+lidOpen:false,
+toggleLid: function (lidStatus)
+{
+this.lidOpen = lidStatus;
+},
+}
+};
+
+const cannot be chaged , properties can still be changed

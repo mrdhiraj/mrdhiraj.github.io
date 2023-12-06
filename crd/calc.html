@@ -5,8 +5,17 @@
     <table>
        <tr>
          <td colspan="2" align="center">Plr</td>
-          <td><input type="number" id="plrs" v-model="plrs" />
-             
+          <td> 
+             <td>
+                <select v-model="noofplrs" name ="plrss" id ="plrss">
+                    <option value ="2">         2         </option>
+                    <option value ="3">         3         </option>
+                    <option value ="4">          4        </option>
+                    <option value ="5">           5       </option>
+                    <option value ="6">            6      </option>
+
+                </select>
+             </td>
       </tr>
       <tr>
         <td colspan="2" align="center">Swaya</td>
@@ -41,17 +50,17 @@
      <tr>
         <td colspan="2" align="center">Jit</td>
 
-        <td><input type="radio" name="jit" v-model="jit1" />
+        <td><input type="radio" name="jit" v-model="jit" value="1" />
            
-            <td><input type="radio" name="jit" v-model="jit2" />
+            <td><input type="radio" name="jit" v-model="jit" value="2" />
                
-                <td><input type="radio"  name="jit" v-model="jit3" />
+                <td><input type="radio"  name="jit" v-model="jit"  value="3"/>
                   
-                    <td><input type="radio" name="jit" v-model="jit4" />
+                    <td><input type="radio" name="jit" v-model="jit" value="4" />
                    
-                        <td><input type="radio" name="jit"  v-model="jit5" />
+                        <td><input type="radio" name="jit"  v-model="jit"  value="5"/>
                            
-                            <td><input type="radio" name="jit"  v-model="jit6" />
+                            <td><input type="radio" name="jit"  v-model="jit"  value="6"/>
 
 
          
@@ -76,9 +85,18 @@
 
 
     </table>
-    {{mal1}}
-  {{totalm}}
+ Summary 
+</br>
+ Total : {{totalm}}
+</br>
+  jit :{{jit}}
+</br>
+ wp1 : {{wp1}}  wp2 : {{wp2}}  wp3 : {{wp3}}  wp4 : {{wp4}}  wp5 : {{wp5}}  wp6 : {{wp6}}
+</br>
+swaya1 : {{swaya1}}  swaya2 : {{swaya2}}  swaya3 : {{swaya3}}  swaya4 : {{swaya4}}  swaya5 : {{swaya5}}  swaya6 : {{swaya6}}
 </span>
+
+fa fa {{fa}}
 </div>
 
 

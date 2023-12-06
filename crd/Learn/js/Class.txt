@@ -1,0 +1,53 @@
+3 ways to define class
+
+1.class declaration : class Name {}
+2.class expression : cosnt Name = class{}
+3.As funcion (old way) function BackPack(name, volumem,color)
+ 
+Examples
+
+class Backpack{
+construrctor(
+name,
+volume,
+color
+)
+this.name =name;
+this.volume = volume;
+this.color = color;
+}
+
+
+
+next file
+
+import Backpack from "./Backpack.js"
+
+const everydayBP = new Backpack(
+"Everyday Backpack",
+30,
+"grey"
+);
+
+console.log ("The ed bp obj "",everydayBP)
+
+
+
+
+
+----------- old way -> still good way to create class
+
+function BackPack(name, volumem,color)
+{
+this.name =name;
+this.volume = volume;
+this.color = color;
+
+}
+
+
+const everydayBP = new Backpack(
+"Everyday Backpack",
+30,
+"grey"
+);

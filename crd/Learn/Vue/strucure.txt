@@ -1,0 +1,5 @@
+{
+data :{},
+computed:{}, -> no need to put in method , these are cached 
+method:{}
+}
