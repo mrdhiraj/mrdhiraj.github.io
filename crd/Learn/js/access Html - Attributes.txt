@@ -1,0 +1,12 @@
+
+we can manipulate any attribute withing any tag in html using js
+
+document.querySeletor("img").attributes
+->lists the attributes of img tag
+
+document.querySeletor("img").hasAttribute("src")
+document.querySeletor("img").getAttribute("src")
+myimg = document.querySeletor("img").setAttribute("alt","Draiwng of backback")
+
+--> can do this !
+myimg.altText ="new alt text "

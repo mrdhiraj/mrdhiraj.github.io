@@ -1,0 +1,7 @@
+
+ document.querySelector("img").style => gives entire list of possible styles and applied styles
+
+
+document.querySeletor("img").style.backgroud.Color ="pink"
+
+hyphens are removed and camel case is used

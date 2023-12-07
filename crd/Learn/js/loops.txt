@@ -1,0 +1,24 @@
+4 ways to loop and a 5th way (map)
+for (let i=0 ;i<stuff;i++)
+{
+}
+
+-- for arrays
+for (const item of stuff)
+{
+}
+
+-- calls the call back function
+stuff.forEach((item)=>{
+console.log(item);
+})
+
+-- for objects in array it returns keys
+for (const item in stuff)
+{
+}
+
+
+map 
+
+It is used when we need to do something with the elements of the array and return a new array

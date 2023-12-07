@@ -1,0 +1,20 @@
+layers control the specifity of selectors
+the top most defined by order is the most improtant layer 
+
+the leaset specific is browser setting
+
+layer is defined by @layer 
+
+eg 
+
+@layer base{
+p{
+color : "red"
+}
+}
+
+order also can be changed by using @layer at beginig of file
+
+@layer base , other
+
+can be used to overide framework css etc 

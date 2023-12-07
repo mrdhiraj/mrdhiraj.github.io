@@ -1,0 +1,13 @@
+cascading ; 
+ the cascading is based on specificity 
+	id > class > element 
+
+inheritance:
+	sytle properties are inherited
+
+specifity
+
+!important preceeds it all
+.myclass {
+  background-color: gray;!important;
+}

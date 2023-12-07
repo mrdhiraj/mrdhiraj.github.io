@@ -1,0 +1,42 @@
+we can select specific items of html using css
+
+eg 
+
+p.class1 selects p elements with class class1
+
+1. Element
+2. all *
+3. class .
+4. id #
+Combinators
+5. Child > to select with parents child criteria
+eg div>p selects p within div onlly
+6. Sibling + First element immediately after eg div +p selects first p after div
+7. Subsequent ~ Preceded by eg p~ul selects  ul preceded by p element
+8. [] Attribute eg [target] selects elements with attribute target
+                   [target="_blank"] elements with attribute target="_blank"
+		   a[href^="https"] elecments with attribute href begining with https
+		   a[href$=".pdf"] elecments with attribute href ends with .pdf
+
+https://www.w3schools.com/cssref/css_selectors.php
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_selectors
+9 slector :
+     eg .joinBtn:active {
+  		box-shadow: 2px 2px 5px #fc894d;
+		}
+	div:empty {
+	    outline: 2px solid deeppink;
+            height: 1em;
+                }
+        
+	.joinBtn:hover {
+  		background-color: bisque;
+		}
+10 Pseudo element 
+    eg p::selection {
+  color: red;
+  background-color: yellow;
+}
+
+
+      

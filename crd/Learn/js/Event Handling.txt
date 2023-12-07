@@ -1,0 +1,21 @@
+Every thing that we interact in browser is an event , like opening it , touching it , resizing , closing, clicking,key press,mouse move etc
+
+see all events in mdn document
+
+targe.addEventListener(targe,callback,[options])
+
+Example 1:
+const mybutton = document.querySeletor(".cta-button")
+
+mybutton.addEventLstener("click",()=>{
+console.log("button clicked")
+},false)
+
+Example 2:
+const mousePosition = (event)=>{
+poxX.innerText =event.pageX;
+posY.innerText =evetn.pageY;
+console.log(event)
+}
+
+window.addEventListener("mousemove" ,mousePosition)

@@ -1,0 +1,26 @@
+var
+	var is globally scoped  , so it can be chagned within another function also
+	DONT USE IT
+
+let
+	let is block scoped
+
+const 
+	block scoped constant
+
+__________
+
+
+js is weakly typed , but thre is types
+
+1.string, 
+2.numbers, 
+3.floating point , 
+4.boolean , 
+5.null , 
+6.undefined, 
+7.object , 
+8.array,
+9.functions
+
+typeof(v)

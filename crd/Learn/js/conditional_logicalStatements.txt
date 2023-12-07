@@ -1,0 +1,15 @@
+if( a=== b && (a >= c a <=d)
+{
+}
+
+a===b?1:2
+
+switch (a)
+{
+case a>9:
+	break;
+case a<8:
+	break;
+default:
+	else
+}

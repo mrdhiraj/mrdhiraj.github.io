@@ -1,0 +1,15 @@
+Here we pass a function as a parameter , this function will then be called withing the function, 
+we we can basically control which function also . More advanced is Promises and async/await
+
+const functionA = function(p)
+{
+return p+100;
+}
+
+const t =(param1, callback_funct1)
+{
+
+callback_funct1(param1)
+}
+
+t(1,functionA)

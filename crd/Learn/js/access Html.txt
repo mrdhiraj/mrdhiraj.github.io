@@ -9,9 +9,32 @@ DOM
 Document object model
 
 css query selector , returns js object
-2.document.querySelector(param)
+2.document.querySelector(param) -> gives first item
 para examples
 	"main" <- html tag 
 	".classname"
 	"#idname"
-3.document.querySeletorAll()
+3.document.querySeletorAll() -> gives all items
+
+/dap_app/webserver/webapps/DAP/export_reportfiles
+/DAP/export_reportfiles/file_img/defaultLogo.jpg
+
+
+
+example :
+document.querySeletorAll("div") .forEach(item => item.style.backgroundColor ="blue")
+
+document.querySeletorAll("div").classList.add("new-class")
+document.querySeletorAll("div").classList.remove("new-class")
+document.querySeletorAll("div").classList.toggle("new-class")
+document.querySeletorAll("div").classList.add("old-class","new-class")
+
+
+others older ways => 
+getElemetnById()
+getElementsByClassName()
+
+
+
+document.createElement
+.append()

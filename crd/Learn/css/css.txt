@@ -33,6 +33,12 @@ text-alilgn: center;
   color: red;
 }
 
+4. Universal
+* {
+  text-align: center;
+  color: blue;
+}
+
 <h1 class="center">Red and center-aligned heading</h1>
 
 

@@ -1,0 +1,24 @@
+Function 
+
+1. Expression 
+	const doTask = function (){};
+2. Declaration
+	function doTask(){};
+3. Immdeiately Invoked function
+	(function(){}}();
+4. Arrow Functions : Every thin left of => is parameter, it referes to closes avaliable scope , it is not hoisted to this
+	const doTask = (param)=>{return val};
+
+
+_______ 
+Arrow funtion development ways 
+
+
+
+f=(a) =>{
+return a+100;
+}
+
+f=(a)=> a+100
+
+f=a=> a+100
