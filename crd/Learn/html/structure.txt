@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+<link rel="stylesheet" href="mystyle.css">
+<style>
+body {
+  font-family: "Sofia", sans-serif;
+}
+</style>
+</head>
+
+<body>
+
+<h1>This is a heading</h1>
+<p>This is a paragraph.</p>
+ 
+<script src="calc.js"></script>
+</body>
+</html>

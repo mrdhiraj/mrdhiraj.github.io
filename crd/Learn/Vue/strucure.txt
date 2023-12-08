@@ -1,5 +1,22 @@
-{
-data :{},
-computed:{}, -> no need to put in method , these are cached 
-method:{}
-}
+intex.html
+<body>
+    <div id="app">
+      <h1>{{ product }}</h1>
+</div>
+    <script src="Vue.js"></script>
+    <script src="main.js"></script>
+</body>
+
+
+main.js
+var app = new Vue({
+    el: '#app',
+    data :{
+        product : 'Rocks'
+    },
+    methods :{       
+    },
+    computed :
+    {}
+    
+})
