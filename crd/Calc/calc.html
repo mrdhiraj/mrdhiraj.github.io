@@ -11,9 +11,11 @@
 
 <h1 @click="noplrs">{{noofplrs}}</h1>
 <div>
-    <input type="range" min="0" max="50" value="0" class="slider" id="myScore" v-model="mal">
-     <label>{{mal}}</label>
-     <img @click="seenclicked" v-bind:src="url" ></img>
+    <input type="range" min="0" max="50" value="0" class="slider" id="myScore" v-model.number="mal">
+     <label @click ="winnertoggle">{{mal}}</label>
+     <img @click="winnertoggle" v-bind:src="winnerurl" ></img>
+     <img @click="seenclicked" v-bind:src="seenurl" ></img>
+     <label>{{point}}</label>
 </div>
  
 

@@ -17,6 +17,11 @@ var app = new Vue({
     methods :{       
     },
     computed :
-    {}
+    {
+        comp1()
+        {
+            return (product)
+        }
+    }
     
 })
