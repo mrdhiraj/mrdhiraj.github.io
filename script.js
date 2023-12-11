@@ -35,7 +35,7 @@ for (let i = 0; i < people2.length; i++)
         //var t = document.getElementById("templates");
         //t.insertAdjacentHTML("afterend", "<button onClick = \"templateClicked('"+template+"')\">" +template+ "</button>");
 
-        var t = document.createElement('div');
+        var t = document.createElement('span');
         t.innerHTML = people2[i][0];
         t.setAttribute('class','template')
         t.addEventListener('click', templateClicked, true);
@@ -86,7 +86,7 @@ function saveTemplate() {
     renderTemplates()
 }
 
-someDefaultTemplates()
+
 function someDefaultTemplates()
 {
     var item = {
@@ -106,3 +106,4 @@ function someDefaultTemplates()
     localStorage.setItem('Numeric Collonize', JSON.stringify(item));
 
 }
+someDefaultTemplates()
