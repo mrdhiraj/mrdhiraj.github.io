@@ -2,3 +2,9 @@
     font-family: "Sofia", sans-serif;
     font-size:40px
 }
+
+img{
+ border-radius: 50%;
+ width: 30px;
+ height:30px   
+}

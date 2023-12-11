@@ -3,7 +3,8 @@ var app = new Vue({
     data :{
         noofplrs :2,
         url: "openeye.png",
-        seen:false
+        seen:false,
+        mal:0
     },
     methods :{
         noplrs(){

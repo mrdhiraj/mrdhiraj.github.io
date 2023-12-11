@@ -11,11 +11,12 @@
 
 <h1 @click="noplrs">{{noofplrs}}</h1>
 <div>
-    <input type="range" min="0" max="50" value="0" class="slider" id="myScore">
-     <label>{{1}}</label>
+    <input type="range" min="0" max="50" value="0" class="slider" id="myScore" v-model="mal">
+     <label>{{mal}}</label>
+     <img @click="seenclicked" v-bind:src="url" ></img>
 </div>
-<h1 @click="seenclicked" >{{url}}</h1>
-<img @click="seenclicked" v-bind:src="url" ></img>
+ 
+
 </div>
 <script src="Vue.js"></script>
 <script src="calc.js"></script>
