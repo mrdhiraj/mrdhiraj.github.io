@@ -25,12 +25,12 @@
 <body>
     <div class='container'>
 
-        <button id="btnReplace">Replace</button>
-        <button id="btnCollon">Collonize</button>
-        <button id="btnComments">Comments</button>
-        <button id="btnTables">Tables</button>
-        <button id="btnDistinct">Distinct</button>
-        <button id="btncopy">Copy Output</button>
+       
+        <button class="top" id="btnCollon">Collonize</button>
+        <button class="top" id="btnComments">Comments</button>
+        <button class="top" id="btnTables">Tables</button>
+        <button class="top" id="btnDistinct">Distinct</button>
+        
 
         <div class='hor'>
             <label>Delimiter</label>
@@ -49,8 +49,12 @@
                 <textarea rows="9" width=100% id="outtxt" placeholder="Output"></textarea>
             </div>
              
-           
-        </div>
+            
+        </div>    
+        <div>
+        <button class="bottom" id="btnReplace">Replace</button>
+        <button class="bottom" id="btncopy">Copy Output</button>
+    </div>    
     </div>
    
     <script src="standardFunctions.js"></script>
