@@ -2,10 +2,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="mystyle.css">
+    <link rel="icon" type="image/x-icon" href="crown.png">
+    <link rel="stylesheet" href="mystyle.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
+
+
 <body>
 <div id="app">
 
@@ -16,11 +20,14 @@
      <img @click="winnertoggle" v-bind:src="winnerurl" ></img>
      <img @click="seenclicked" v-bind:src="seenurl" ></img>
      <label>{{point}}</label>
-</div>
- 
+</div> 
 
+ 
+<Ascore url="h7e" mal="355"></Ascore>
+ 
 </div>
 <script src="Vue.js"></script>
-<script src="calc.js"></script>
+<script type="module" src="calc.js"></script>
+
 </body>
 </html>

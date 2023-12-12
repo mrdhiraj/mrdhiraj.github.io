@@ -28,3 +28,6 @@ Needs web pack or vue cli
 
 read vue document 
 
+
+slots and props can be used to send data and content to the components
+

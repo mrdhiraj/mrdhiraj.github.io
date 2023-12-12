@@ -1,23 +1,28 @@
+import AScore from './Ascore.js'
+
 var app = new Vue({
     el: '#app',
+        components:
+    {
+        Ascore:AScore
+    },
     data :{
         noofplrs :2,
-        seenurl: "openeye.png",
-        winnerurl: "crown.png",
+        seenurl: "images/openeye.png",
+        winnerurl: "images/crown.png",
         seen:false,
-        mal:0,
-        
+        mal:0
     },
     methods :{
         noplrs(){
             app.noofplrs ===6 ?(app.noofplrs=2) :  (app.noofplrs=app.noofplrs+1)        
         },
         seenclicked(){           
-            app.seenurl=app.seenurl== "openeye.png"?"closedeye.png" :  "openeye.png"    
+            app.seenurl=app.seenurl== "images/openeye.png"?"images/closedeye.png" :  "images/openeye.png"    
         },
         winnertoggle()
         {
-            app.winnerurl=app.winnerurl== "crown.png"?"nowin.png" :  "crown.png"    
+            app.winnerurl=app.winnerurl== "images/crown.png"?"images/nowin.png" :  "images/crown.png"    
         }
     },
     computed :{
@@ -25,6 +30,7 @@ var app = new Vue({
         {
             return  this.mal+4 
         }
+    
     }
 
 })
