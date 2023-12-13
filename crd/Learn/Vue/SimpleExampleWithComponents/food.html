@@ -1,9 +1,11 @@
 <body>
     <div id="app">
-      <h1>{{ product }}</h1>
+      <h4>{{ product }}</h4>
 
-      <Fooditem data1="32">this is in slot</Fooditem>
-     
+      <Fooditem :data1=product @my-event="gotEvent">this is in slot</Fooditem>
+      
+This is from component {{ product }}
+      
 </div>
     <script src="Vue.js"></script>
   

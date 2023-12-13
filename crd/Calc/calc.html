@@ -1,33 +1,30 @@
-
 <!DOCTYPE html>
 <html>
+
 <head>
     <link rel="icon" type="image/x-icon" href="crown.png">
     <link rel="stylesheet" href="mystyle.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
 
 
 <body>
-<div id="app">
+    <div id="app">
 
-<h1 @click="noplrs">{{noofplrs}}</h1>
-<div>
-    <input type="range" min="0" max="50" value="0" class="slider" id="myScore" v-model.number="mal">
-     <label @click ="winnertoggle">{{mal}}</label>
-     <img @click="winnertoggle" v-bind:src="winnerurl" ></img>
-     <img @click="seenclicked" v-bind:src="seenurl" ></img>
-     <label>{{point}}</label>
-</div> 
+        <h1 @click="noplrs">{{noofplrs}}</h1>
+        
 
- 
-<Ascore url="h7e" mal="355"></Ascore>
- 
-</div>
-<script src="Vue.js"></script>
-<script type="module" src="calc.js"></script>
+        <Ascore url="h7e" @my-event="calculatecalled"></Ascore>
+
+        <!-- <Ascore url="h7e" v-for="x in noofplrs"></Ascore> -->
+        
+
+    </div>
+    <script src="Vue.js"></script>
+    <script type="module" src="calc.js"></script>
 
 </body>
+
 </html>

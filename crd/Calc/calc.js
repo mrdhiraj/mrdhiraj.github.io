@@ -2,35 +2,37 @@ import AScore from './Ascore.js'
 
 var app = new Vue({
     el: '#app',
-        components:
+    components:
     {
-        Ascore:AScore
+        Ascore: AScore
     },
-    data :{
-        noofplrs :2,
+    data: {
+        noofplrs: 2,
         seenurl: "images/openeye.png",
         winnerurl: "images/crown.png",
-        seen:false,
-        mal:0
+        seen: false,
+        mal: 0
     },
-    methods :{
-        noplrs(){
-            app.noofplrs ===6 ?(app.noofplrs=2) :  (app.noofplrs=app.noofplrs+1)        
+    methods: {
+        noplrs() {
+            app.noofplrs === 6 ? (app.noofplrs = 2) : (app.noofplrs = app.noofplrs + 1)
         },
-        seenclicked(){           
-            app.seenurl=app.seenurl== "images/openeye.png"?"images/closedeye.png" :  "images/openeye.png"    
+        seenclicked() {
+            app.seenurl = app.seenurl == "images/openeye.png" ? "images/closedeye.png" : "images/openeye.png"
         },
-        winnertoggle()
+        winnertoggle() {
+            app.winnerurl = app.winnerurl == "images/crown.png" ? "images/nowin.png" : "images/crown.png"
+        },
+        calculatecalled(param)
         {
-            app.winnerurl=app.winnerurl== "images/crown.png"?"images/nowin.png" :  "images/crown.png"    
+            alert(param.mal)
         }
     },
-    computed :{
-        point()
-        {
-            return  this.mal+4 
+    computed: {
+        point() {
+            return this.mal + 4
         }
-    
+
     }
 
 })

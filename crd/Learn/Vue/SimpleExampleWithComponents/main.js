@@ -3,16 +3,23 @@ import FoodItem from './FoodItem.js'
 var app = new Vue({
     el: '#app',
     data :{
-        product : 'Rocks'
+        product : ' The product is Apple '
     },
-    methods :{       
+    methods :{  
+        gotEvent(param)
+        {
+            //this is called from event
+            this.product = param
+        }     
     },
-    computed :
-    {},
     components:
     {
         Fooditem:FoodItem
-    }
+    },
+    computed :
+    {
+       
+    },
     
 })
  
