@@ -1,4 +1,4 @@
-import AScore from './Ascore.js'
+import AScore from './ascore.js'
 
 var app = new Vue({
     el: '#app',
