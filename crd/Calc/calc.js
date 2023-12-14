@@ -7,32 +7,58 @@ var app = new Vue({
         Ascore: AScore
     },
     data: {
-        noofplrs: 2,
-        seenurl: "images/openeye.png",
-        winnerurl: "images/crown.png",
-        seen: false,
-        mal: 0
+        plrsadd:true,
+        collect:[{
+            name:"p1",
+            mal:0,
+            point:0,
+            seen:false,
+            win:false
+        },{
+            name :"p2",
+            mal:0,
+            point:0,
+            seen:false,
+            win:false
+        }]
     },
     methods: {
-        noplrs() {
-            app.noofplrs === 6 ? (app.noofplrs = 2) : (app.noofplrs = app.noofplrs + 1)
-        },
-        seenclicked() {
-            app.seenurl = app.seenurl == "images/openeye.png" ? "images/closedeye.png" : "images/openeye.png"
-        },
-        winnertoggle() {
-            app.winnerurl = app.winnerurl == "images/crown.png" ? "images/nowin.png" : "images/crown.png"
+        noplrs() {            
+            
+            if (app.plrsadd){
+                app.collect.push ({
+                    name:"p"+(app.collect.length+1),
+                    mal:0,
+                    point:0,
+                    seen:false,
+                    win:false
+                })
+            }
+            else{
+                app.collect.pop()
+            }
+
+            if (app.collect.length==2)
+            {
+                app.plrsadd=true
+            }
+            if (app.collect.length==6)
+            {
+                app.plrsadd=false
+            }
         },
         calculatecalled(param)
         {
-            alert(param.mal)
+           // alert(param)
+            //add up here
         }
     },
     computed: {
         point() {
             return this.mal + 4
         }
-
     }
+});
+Vue.config.devtools = true;
 
-})
+ 

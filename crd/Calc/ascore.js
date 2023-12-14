@@ -36,9 +36,9 @@ export default {
   },
   computed: {
     point() {
+      this.calculate()
       return this.plr.mal + 4
     }
-
   }
 }
 

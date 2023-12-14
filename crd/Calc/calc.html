@@ -2,25 +2,20 @@
 <html>
 
 <head>
-    <link rel="icon" type="image/x-icon" href="crown.png">
+    <link rel="icon" type="image/x-icon" href="/images/crown.png">
     <link rel="stylesheet" href="mystyle.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
 
-
 <body>
     <div id="app">
+        <h1 @click="noplrs">{{collect.length}}</h1>
+        <Ascore url="h7e" v-for="(i,x) in collect" @my-event="calculatecalled(x)"></Ascore>  
 
-        <h1 @click="noplrs">{{noofplrs}}</h1>
-        
-
-        <Ascore url="h7e" @my-event="calculatecalled"></Ascore>
-
-        <!-- <Ascore url="h7e" v-for="x in noofplrs"></Ascore> -->
-        
-
+        <hr>
+        {{collect}}
     </div>
     <script src="Vue.js"></script>
     <script type="module" src="calc.js"></script>
