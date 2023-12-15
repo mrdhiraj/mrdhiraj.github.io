@@ -8,7 +8,9 @@ var app = new Vue({
     },
     data: {
         plrsadd:true,
+        debugmessage:"Debug Info will come here",
         collect:[{
+            main:true,
             name:"p1",
             mal:0,
             point:0,
@@ -20,7 +22,10 @@ var app = new Vue({
             point:0,
             seen:false,
             win:false
-        }]
+        }],
+        totalMal:0,
+        winner:"",
+
     },
     methods: {
         noplrs() {            
@@ -49,8 +54,14 @@ var app = new Vue({
         },
         calculatecalled(param)
         {
-           // alert(param)
-            //add up here
+           app.debugmessage=param
+            
+            let totalmal=0
+            for (const x of app.collect)
+            {
+                totalmal=totalmal+x.mal                
+            }
+            app.totalMal = totalmal
         }
     },
     computed: {

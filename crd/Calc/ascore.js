@@ -4,6 +4,8 @@ export default {
       seenurl: "images/closedeye.png",
       winnerurl: "images/nowin.png",
       plr:{
+        component:true,
+        name:"p1",
         mal:10,
         win:false,
         seen:false
@@ -11,6 +13,7 @@ export default {
     };
   },
   template: ` <div>
+  {{plr.name}}
   <img @click="winnertoggle" :src=winnerurl></img>
 <input type="range" min="0" max="50" value="0" class="slider" v-model.number="plr.mal"></input>
 {{plr.mal}} 
@@ -18,7 +21,7 @@ export default {
 <label>{{point}}</label> 
 </div>`,
   name: "Ascore",
-  props: ['url'],
+  props: ['url'],// to get data from the main page
   methods: {
     seenclicked() {  
       this.plr.seen = !this.plr.seen
@@ -31,12 +34,13 @@ export default {
         this.calculate()
     },
     calculate(){
-       this.$emit('my-event',this.plr);// we need to emit events to share data to outside world
+       this.$emit('my-event',44);// we need to emit events to share data to outside world
     }
   },
   computed: {
     point() {
       this.calculate()
+      this.plr.name= this.url.name
       return this.plr.mal + 4
     }
   }

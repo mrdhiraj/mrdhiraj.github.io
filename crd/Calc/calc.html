@@ -6,16 +6,17 @@
     <link rel="stylesheet" href="mystyle.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 </head>
 
 <body>
     <div id="app">
         <h1 @click="noplrs">{{collect.length}}</h1>
-        <Ascore url="h7e" v-for="(i,x) in collect" @my-event="calculatecalled(x)"></Ascore>  
-
+        <Ascore :url=x v-for="(x,i) in collect" @my-event="calculatecalled"></Ascore>  
+        <!-- the events function should be called without parameters to get object from caller -->
         <hr>
-        {{collect}}
+        {{totalMal}}
+        <hr>
+       Debug info:  {{debugmessage}}
     </div>
     <script src="Vue.js"></script>
     <script type="module" src="calc.js"></script>
