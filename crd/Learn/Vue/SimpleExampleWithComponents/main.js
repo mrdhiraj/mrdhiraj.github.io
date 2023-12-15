@@ -10,7 +10,13 @@ var app = new Vue({
         {
             //this is called from event
             this.product = param
-        }     
+        }  ,
+        updateAcomponent()   
+        {
+            this.$refs.myComponent.produ="Japan" //or
+            this.$refs["myComponent"].produ="Japan"
+            console.log(this.$refs.myComponent)//this.$refs.component1.open = true
+        }
     },
     components:
     {

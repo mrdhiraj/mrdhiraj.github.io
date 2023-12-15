@@ -1,0 +1,20 @@
+Bind 
+	Two way 
+	one way
+
+	to css
+	to html elements
+
+Create components dynamically
+
+Pass data from component to parent
+	-> Through events ($emit)
+
+Pass data from parent to component 
+	-> Through attributes , in slot
+
+Update component from parent js 
+        -><Fooditem  ref='myComponent'></Fooditem>
+        -> this.$refs.myComponent.produ="Japan"
+            
+	

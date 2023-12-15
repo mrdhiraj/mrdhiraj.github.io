@@ -2,8 +2,9 @@
     <div id="app">
       <h4>{{ product }}</h4>
 
-      <Fooditem :data1=product @my-event="gotEvent">this is in slot</Fooditem>
+      <Fooditem  ref='myComponent' :data1=product @my-event="gotEvent">this is in slot</Fooditem>
       
+      <button @click="updateAcomponent" >update a component</button>
 This is from component {{ product }}
       
 </div>
