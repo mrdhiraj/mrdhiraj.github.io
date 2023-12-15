@@ -54,14 +54,34 @@ var app = new Vue({
         },
         calculatecalled(param)
         {
-           app.debugmessage=param
-            
+           //app.debugmessage=param
+           let objIndex = app.collect.findIndex((obj => obj.name == param.name));
+           
+           app.collect[objIndex].mal= param.mal
+           app.collect[objIndex].win= param.seen
+
             let totalmal=0
             for (const x of app.collect)
             {
                 totalmal=totalmal+x.mal                
             }
             app.totalMal = totalmal
+            app.debugmessage=param +"--" + objIndex
+        },
+        winnerchangecalled(param)
+        {
+            //console.log(this.$refs.onescore[0].plr.win)
+            for (let s in app.collect){
+                //console.log(s)
+                this.$refs.onescore[s].plr.win=false
+                this.$refs.onescore[s].winnerurl= "images/nowin.png"
+                if (this.$refs.onescore[s].plr.name==param.name)
+                {
+                    this.$refs.onescore[s].plr.win=true
+                    this.$refs.onescore[s].winnerurl= "images/crown.png"
+                    //console.log(param.name)
+                }
+            }
         }
     },
     computed: {

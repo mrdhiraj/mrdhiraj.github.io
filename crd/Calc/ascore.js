@@ -28,13 +28,17 @@ export default {
       this.seenurl = this.plr.seen ?  "images/openeye.png":"images/closedeye.png" 
       this.calculate()
     },
-    winnertoggle() {        
-        this.plr.win = !this.plr.win
-        this.winnerurl = this.plr.win ?  "images/crown.png":"images/nowin.png"
+    winnertoggle() {      
+     
+        //this.plr.win = !this.plr.win this is to be controlled from parent so removing here 
+        //this.winnerurl = this.plr.win ?  "images/crown.png":"images/nowin.png"
         this.calculate()
+        this.$emit('winner-changed',this.plr)
+       
+        
     },
     calculate(){
-       this.$emit('my-event',44);// we need to emit events to share data to outside world
+       this.$emit('my-event',this.plr);// we need to emit events to share data to outside world
     }
   },
   computed: {
@@ -42,6 +46,7 @@ export default {
       this.calculate()
       this.plr.name= this.url.name
       return this.plr.mal + 4
+      
     }
   }
 }

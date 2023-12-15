@@ -15,7 +15,7 @@ var app = new Vue({
         {
             this.$refs.myComponent.produ="Japan" //or
             this.$refs["myComponent"].produ="Japan"
-            console.log(this.$refs.myComponent)//this.$refs.component1.open = true
+            console.log(this)//this.$refs.component1.open = true
         }
     },
     components:

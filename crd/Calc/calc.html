@@ -11,7 +11,8 @@
 <body>
     <div id="app">
         <h1 @click="noplrs">{{collect.length}}</h1>
-        <Ascore :url=x v-for="(x,i) in collect" @my-event="calculatecalled"></Ascore>  
+        <!-- <Ascore ref='onescore1' url="x" @winner-changed="winnerchangecalled"  ></Ascore>   -->
+        <Ascore ref="onescore" :url=x v-for="(x,i) in collect" @my-event="calculatecalled" @winner-changed="winnerchangecalled" ></Ascore>  
         <!-- the events function should be called without parameters to get object from caller -->
         <hr>
         {{totalMal}}
