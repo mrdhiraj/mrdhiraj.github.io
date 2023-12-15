@@ -14,17 +14,20 @@ var app = new Vue({
             name:"p1",
             mal:0,
             point:0,
+            winpoint:0,
             seen:false,
             win:false
         },{
             name :"p2",
             mal:0,
             point:0,
+            winpoint:0,
             seen:false,
             win:false
         }],
         totalMal:0,
         winner:"",
+        winpoint:0
 
     },
     methods: {
@@ -35,6 +38,7 @@ var app = new Vue({
                     name:"p"+(app.collect.length+1),
                     mal:0,
                     point:0,
+                    winpoint:0,
                     seen:false,
                     win:false
                 })
@@ -55,21 +59,25 @@ var app = new Vue({
         calculatecalled(param)
         {
            //app.debugmessage=param
-           let objIndex = app.collect.findIndex((obj => obj.name == param.name));
+        //    let objIndex = app.collect.findIndex((obj => obj.name == param.name));
            
-           app.collect[objIndex].mal= param.mal
-           app.collect[objIndex].win= param.seen
+        //    app.collect[objIndex].mal= param.mal
+        //    app.collect[objIndex].seen= param.seen
 
-            let totalmal=0
-            for (const x of app.collect)
-            {
-                totalmal=totalmal+x.mal                
-            }
-            app.totalMal = totalmal
-            app.debugmessage=param +"--" + objIndex
+        //     let totalmal=0
+        //     for (const x of app.collect)
+        //     {
+        //         totalmal=totalmal+x.mal                
+        //     }
+        //     app.totalMal = totalmal
+        //     app.debugmessage=param 
+            app.winpoint=0
+            app.totalMal=0
+            app.winner=""
         },
         winnerchangecalled(param)
         {
+            app.winpoint=0
             //console.log(this.$refs.onescore[0].plr.win)
             for (let s in app.collect){
                 //console.log(s)
@@ -81,13 +89,18 @@ var app = new Vue({
                     this.$refs.onescore[s].winnerurl= "images/crown.png"
                     //console.log(param.name)
                 }
+                else{
+                    app.winpoint += app.collect[s].seen?3:10 
+                }
             }
+        },
+        docalculation()
+        {
+            
         }
     },
     computed: {
-        point() {
-            return this.mal + 4
-        }
+       
     }
 });
 Vue.config.devtools = true;

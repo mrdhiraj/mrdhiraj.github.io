@@ -6,7 +6,7 @@ export default {
       plr:{
         component:true,
         name:"p1",
-        mal:10,
+        mal:0,
         win:false,
         seen:false
       }

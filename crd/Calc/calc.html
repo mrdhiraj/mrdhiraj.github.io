@@ -14,8 +14,10 @@
         <!-- <Ascore ref='onescore1' url="x" @winner-changed="winnerchangecalled"  ></Ascore>   -->
         <Ascore ref="onescore" :url=x v-for="(x,i) in collect" @my-event="calculatecalled" @winner-changed="winnerchangecalled" ></Ascore>  
         <!-- the events function should be called without parameters to get object from caller -->
+        <button @click="docalculation"> Calculate</button>
         <hr>
-        {{totalMal}}
+       Total : {{totalMal}}
+       Win point : {{winpoint}}
         <hr>
        Debug info:  {{debugmessage}}
     </div>
