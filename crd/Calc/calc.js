@@ -10,37 +10,22 @@ var app = new Vue({
         plrsadd:true,
         debugmessage:"Debug Info will come here",
         collect:[{
-            main:true,
-            name:"p1",
-            mal:0,
-            point:0,
-            winpoint:0,
-            seen:false,
-            win:false
+            name:"p1"
         },{
-            name :"p2",
-            mal:0,
-            point:0,
-            winpoint:0,
-            seen:false,
-            win:false
+            name :"p2"
         }],
         totalMal:0,
-        winner:"",
-        winpoint:0
+        winner:"Select winner",
+        winnerIndex:-1,
+        totalwinpoint:0
 
     },
     methods: {
-        noplrs() {            
+        toggle_plrs() {            
             
             if (app.plrsadd){
                 app.collect.push ({
-                    name:"p"+(app.collect.length+1),
-                    mal:0,
-                    point:0,
-                    winpoint:0,
-                    seen:false,
-                    win:false
+                    name:"p"+(app.collect.length+1)
                 })
             }
             else{
@@ -56,47 +41,62 @@ var app = new Vue({
                 app.plrsadd=false
             }
         },
-        calculatecalled(param)
+        event_clear(param)
         {
-           //app.debugmessage=param
-        //    let objIndex = app.collect.findIndex((obj => obj.name == param.name));
-           
-        //    app.collect[objIndex].mal= param.mal
-        //    app.collect[objIndex].seen= param.seen
-
-        //     let totalmal=0
-        //     for (const x of app.collect)
-        //     {
-        //         totalmal=totalmal+x.mal                
-        //     }
-        //     app.totalMal = totalmal
-        //     app.debugmessage=param 
-            app.winpoint=0
+            app.totalwinpoint=0
             app.totalMal=0
             app.winner=""
         },
         winnerchangecalled(param)
         {
-            app.winpoint=0
-            //console.log(this.$refs.onescore[0].plr.win)
+            app.totalwinpoint=0
+            //find individual
             for (let s in app.collect){
-                //console.log(s)
                 this.$refs.onescore[s].plr.win=false
                 this.$refs.onescore[s].winnerurl= "images/nowin.png"
                 if (this.$refs.onescore[s].plr.name==param.name)
                 {
                     this.$refs.onescore[s].plr.win=true
+                    this.$refs.onescore[s].makeseen()
                     this.$refs.onescore[s].winnerurl= "images/crown.png"
-                    //console.log(param.name)
-                }
-                else{
-                    app.winpoint += app.collect[s].seen?3:10 
-                }
+                }               
             }
         },
         docalculation()
         {
-            
+            app.totalMal=0
+            app.totalwinpoint=0
+
+            //group out metric find totals
+            for (let s in app.collect){                    
+                    app.totalMal += this.$refs.onescore[s].plr.seen? this.$refs.onescore[s].plr.mal:0
+                    if (! this.$refs.onescore[s].plr.win ){
+                    app.totalwinpoint+= this.$refs.onescore[s].plr.seen?3:10                 
+                    }
+            }
+            let noplrs = app.collect.length
+            // individual out mertic
+            for (let s in app.collect){     
+                let win = this.$refs.onescore[s].plr.win 
+                let seen = this.$refs.onescore[s].plr.seen
+                let mal = this.$refs.onescore[s].plr.mal
+                let winpoint =0
+                
+                    if (win){ 
+                        winpoint=app.totalwinpoint                                        
+                        app.winner = this.$refs.onescore[s].plr.name
+                        app.winnerIndex = s
+                    }else{
+                        winpoint= seen?-3:-10
+                    }
+                    this.$refs.onescore[s].plr.winpoint=winpoint
+                    this.$refs.onescore[s].plr.points=mal*noplrs- app.totalMal + winpoint
+                    //alert(mal +' '+ noplrs +' '+ app.totalMal +' ' + winpoint)
+            }
+            if(app.winnerIndex==-1)
+            {
+                alert("Please select W")
+            }
         }
     },
     computed: {

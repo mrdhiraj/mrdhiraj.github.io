@@ -4,11 +4,12 @@ export default {
       seenurl: "images/closedeye.png",
       winnerurl: "images/nowin.png",
       plr:{
-        component:true,
-        name:"p1",
+        name:"",
         mal:0,
+        points:0,
         win:false,
-        seen:false
+        seen:false,
+        winpoint:0
       }
     };
   },
@@ -18,7 +19,7 @@ export default {
 <input type="range" min="0" max="50" value="0" class="slider" v-model.number="plr.mal"></input>
 {{plr.mal}} 
 <img @click="seenclicked" :src=seenurl></img>
-<label>{{point}}</label> 
+<label>{{plr.points}} {{point}} {{plr.winpoint}}</label> 
 </div>`,
   name: "Ascore",
   props: ['url'],// to get data from the main page
@@ -26,26 +27,29 @@ export default {
     seenclicked() {  
       this.plr.seen = !this.plr.seen
       this.seenurl = this.plr.seen ?  "images/openeye.png":"images/closedeye.png" 
-      this.calculate()
+      this.clear_data()
+    },
+    makeseen() {  
+      this.plr.seen = true
+      this.seenurl = this.plr.seen ?  "images/openeye.png":"images/closedeye.png" 
+      this.clear_data()
     },
     winnertoggle() {      
      
         //this.plr.win = !this.plr.win this is to be controlled from parent so removing here 
         //this.winnerurl = this.plr.win ?  "images/crown.png":"images/nowin.png"
-        this.calculate()
+        this.clear_data()
         this.$emit('winner-changed',this.plr)
-       
-        
     },
-    calculate(){
+    clear_data(){
        this.$emit('my-event',this.plr);// we need to emit events to share data to outside world
     }
   },
   computed: {
     point() {
-      this.calculate()
+      //this.clear_data()
       this.plr.name= this.url.name
-      return this.plr.mal + 4
+      //return this.plr.mal + 4
       
     }
   }
