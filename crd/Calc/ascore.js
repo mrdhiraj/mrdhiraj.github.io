@@ -9,26 +9,32 @@ export default {
         points:0,
         win:false,
         seen:false,
-        winpoint:0
+        winpoint:0,
+        money:0
       }
     };
   },
   template: ` <div>
-  {{plr.name}}
+  <span style="width:4000px;color:red"> {{plr.name}} </span>
   <img @click="winnertoggle" :src=winnerurl></img>
+  <img @click="seenclicked" :src=seenurl></img>
   {{plr.winpoint}}
-<input type="number" min="0" max="50" value="0" class="slider" v-model.number="plr.mal"></input>
-{{plr.mal}} 
-<img @click="seenclicked" :src=seenurl></img>
-<label>{{plr.points}} {{point}} </label> 
+<input type="number" min="1" max="50" value="0" class="slider" v-model.number="plr.mal"></input>
+
+
+<label>{{plr.points}} {{point}} Rs.{{plr.money}} </label> 
 </div>`,
   name: "Ascore",
   props: ['url'],// to get data from the main page
   methods: {
     seenclicked() {  
+      if (this.plr.win){
+        this.clear_data()
+      }else{
       this.plr.seen = !this.plr.seen
       this.seenurl = this.plr.seen ?  "images/openeye.png":"images/closedeye.png" 
       this.clear_data()
+      }
     },
     makeseen() {  
       this.plr.seen = true

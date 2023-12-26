@@ -17,8 +17,8 @@ var app = new Vue({
         totalMal:0,
         winner:"Select winner",
         winnerIndex:-1,
-        totalwinpoint:0
-
+        totalwinpoint:0,
+        rate:1
     },
     methods: {
         toggle_plrs() {            
@@ -45,7 +45,7 @@ var app = new Vue({
         {
             app.totalwinpoint=0
             app.totalMal=0
-            app.winner=""
+            app.winner=""            
         },
         winnerchangecalled(param)
         {
@@ -79,7 +79,7 @@ var app = new Vue({
             for (let s in app.collect){     
                 let win = this.$refs.onescore[s].plr.win 
                 let seen = this.$refs.onescore[s].plr.seen
-                let mal = this.$refs.onescore[s].plr.mal
+                let mal = this.$refs.onescore[s].plr.seen? this.$refs.onescore[s].plr.mal:0
                 let winpoint =0
                 
                     if (win){ 
@@ -91,6 +91,7 @@ var app = new Vue({
                     }
                     this.$refs.onescore[s].plr.winpoint=winpoint
                     this.$refs.onescore[s].plr.points=mal*noplrs- app.totalMal + winpoint
+                    this.$refs.onescore[s].plr.money=this.$refs.onescore[s].plr.points*app.rate
                     //alert(mal +' '+ noplrs +' '+ app.totalMal +' ' + winpoint)
             }
             if(app.winnerIndex==-1)
