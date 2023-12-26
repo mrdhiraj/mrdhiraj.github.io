@@ -11,7 +11,7 @@
 <body>
     <div id="app">
         <h1 @click="toggle_plrs">{{collect.length}}</h1>
-
+        <input type="number" min="1" max="100" step="any" />
         <Ascore ref="onescore" :url=x v-for="(x,i) in collect" @my-event="event_clear" @winner-changed="winnerchangecalled" >
 
         </Ascore>  

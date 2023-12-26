@@ -16,10 +16,11 @@ export default {
   template: ` <div>
   {{plr.name}}
   <img @click="winnertoggle" :src=winnerurl></img>
-<input type="range" min="0" max="50" value="0" class="slider" v-model.number="plr.mal"></input>
+  {{plr.winpoint}}
+<input type="number" min="0" max="50" value="0" class="slider" v-model.number="plr.mal"></input>
 {{plr.mal}} 
 <img @click="seenclicked" :src=seenurl></img>
-<label>{{plr.points}} {{point}} {{plr.winpoint}}</label> 
+<label>{{plr.points}} {{point}} </label> 
 </div>`,
   name: "Ascore",
   props: ['url'],// to get data from the main page
