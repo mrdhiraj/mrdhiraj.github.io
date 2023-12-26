@@ -15,15 +15,15 @@ export default {
     };
   },
   template: ` <div>
-  <span style="width:4000px;color:red"> {{plr.name}} </span>
+  <span class ="ascoreelement"> {{plr.name}} </span>
   <img @click="winnertoggle" :src=winnerurl></img>
+  <span class ="ascoreelement"> {{plr.winpoint}}</span>
   <img @click="seenclicked" :src=seenurl></img>
-  {{plr.winpoint}}
-<input type="number" min="1" max="50" value="0" class="slider" v-model.number="plr.mal"></input>
-
-
-<label>{{plr.points}} {{point}} Rs.{{plr.money}} </label> 
-</div>`,
+  <span class ="ascoreelement"> {{plr.points}}</span>
+  <input type="number" min="1" max="50" value="0" class="slider" v-model.number="plr.mal"></input>
+  <span class ="ascoreelement"> Rs.{{plr.money}} </span>
+  {{point}}  
+  </div>`,
   name: "Ascore",
   props: ['url'],// to get data from the main page
   methods: {

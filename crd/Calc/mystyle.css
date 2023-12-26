@@ -12,3 +12,12 @@ img{
 .fix{
     width:3000px;
 }
+
+.ascoreelement{
+display:inline-block;  
+background-color:yellow;
+width:40px;
+color:green;
+margin-top:14px;
+text-align: right;
+}
