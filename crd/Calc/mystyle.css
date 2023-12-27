@@ -21,3 +21,10 @@ color:green;
 margin-top:14px;
 text-align: right;
 }
+
+.rotate-text {
+    display:inline-block;
+    width: 40px;
+    transform: rotate(-90deg);
+    text-align: left;
+ }

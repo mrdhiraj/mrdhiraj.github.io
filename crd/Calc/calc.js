@@ -18,11 +18,17 @@ var app = new Vue({
         winner:"Select winner",
         winnerIndex:-1,
         totalwinpoint:0,
-        rate:1
+        rate:1,
+        self:{
+            totalmal:0,
+            selfmal:0
+        }
+    },
+    updated(){
+        //app.docalculation()
     },
     methods: {
-        toggle_plrs() {            
-            
+        toggle_plrs() {                        
             if (app.plrsadd){
                 app.collect.push ({
                     name:"p"+(app.collect.length+1)
@@ -44,8 +50,7 @@ var app = new Vue({
         event_clear(param)
         {
             app.totalwinpoint=0
-            app.totalMal=0
-            app.winner=""            
+            app.totalMal=0                  
         },
         winnerchangecalled(param)
         {
@@ -61,19 +66,24 @@ var app = new Vue({
                     this.$refs.onescore[s].winnerurl= "images/crown.png"
                 }               
             }
+            app.docalculation()
         },
         docalculation()
         {
+            //alert(1)
             app.totalMal=0
             app.totalwinpoint=0
 
             //group out metric find totals
             for (let s in app.collect){                    
                     app.totalMal += this.$refs.onescore[s].plr.seen? this.$refs.onescore[s].plr.mal:0
-                    if (! this.$refs.onescore[s].plr.win ){
-                    app.totalwinpoint+= this.$refs.onescore[s].plr.seen?3:10                 
+                    if (!this.$refs.onescore[s].plr.win ){
+                        if(!this.$refs.onescore[s].plr.duply){
+                            app.totalwinpoint+= this.$refs.onescore[s].plr.seen?3:10                 
+                        }
                     }
             }
+
             let noplrs = app.collect.length
             // individual out mertic
             for (let s in app.collect){     
@@ -87,12 +97,13 @@ var app = new Vue({
                         app.winner = this.$refs.onescore[s].plr.name
                         app.winnerIndex = s
                     }else{
+                        if(!this.$refs.onescore[s].plr.duply){
                         winpoint= seen?-3:-10
+                        }
                     }
                     this.$refs.onescore[s].plr.winpoint=winpoint
                     this.$refs.onescore[s].plr.points=mal*noplrs- app.totalMal + winpoint
                     this.$refs.onescore[s].plr.money=this.$refs.onescore[s].plr.points*app.rate
-                    //alert(mal +' '+ noplrs +' '+ app.totalMal +' ' + winpoint)
             }
             if(app.winnerIndex==-1)
             {
@@ -101,7 +112,14 @@ var app = new Vue({
         }
     },
     computed: {
-       
+       selfscore()
+       {     
+            return this.collect.length * this.self.selfmal - this.self.totalmal
+       },
+       selfscorers()
+       {     
+            return (this.collect.length * this.self.selfmal - this.self.totalmal)*this.rate
+       }
     }
 });
 Vue.config.devtools = true;

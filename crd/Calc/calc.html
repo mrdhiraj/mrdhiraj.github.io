@@ -12,17 +12,31 @@
     <div id="app">
         <h1 @click="toggle_plrs">{{collect.length}}</h1>
         1 point= <input type="number" min="1" max="100" step="any" v-model.number="rate" />
+        <br>
+        <span class="rotate-text"> Name </span>
+        <span class="rotate-text"> Win Point </span>
+        <span class="rotate-text"> Seen </span>
+        <span class="rotate-text"> Point </span>
+        <span class="rotate-text"> Mal </span>
+        <span class="rotate-text"> Duply </span>
+        <span class="rotate-text"> Rs </span>
+        
         <Ascore ref="onescore" :url=x v-for="(x,i) in collect" @my-event="event_clear" @winner-changed="winnerchangecalled" >
 
         </Ascore>  
         <!-- the events function should be called without parameters to get object from caller -->
         <button @click="docalculation"> Calculate</button>
         <hr>
-       Total : {{totalMal}}
-       Win point : {{totalwinpoint}}
-       Winner : {{winner}}
+        Winner : {{winner}}<br>
+        Total Mal : {{totalMal}}<br>
+        Total Win point : {{totalwinpoint}}<br>
         <hr>
-       Debug info:  {{debugmessage}}
+       
+        Total:<input type="number" min="1" max="50" value="0" class="slider" v-model.number="self.totalmal"></input>
+        Self:<input type="number" min="1" max="50" value="0" class="slider" v-model.number="self.selfmal"></input>
+        points:{{selfscore}} rs:{{selfscorers}}
+        <hr>
+       Debug info: 
     </div>
     <script src="Vue.js"></script>
     <script type="module" src="calc.js"></script>

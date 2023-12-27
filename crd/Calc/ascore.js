@@ -9,6 +9,7 @@ export default {
         points:0,
         win:false,
         seen:false,
+        duply:false,
         winpoint:0,
         money:0
       }
@@ -21,6 +22,7 @@ export default {
   <img @click="seenclicked" :src=seenurl></img>
   <span class ="ascoreelement"> {{plr.points}}</span>
   <input type="number" min="1" max="50" value="0" class="slider" v-model.number="plr.mal"></input>
+  <input type="checkbox" class="slider" v-model.number="plr.duply"></input>
   <span class ="ascoreelement"> Rs.{{plr.money}} </span>
   {{point}}  
   </div>`,
