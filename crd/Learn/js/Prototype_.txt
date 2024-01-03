@@ -1,0 +1,40 @@
+Lesson 1 :
+Momory opitmization
+	Prototypes help reduce memory size by making need of just one copy of properties and function instead of function in each copy of objects.
+	Remove from constructor function and keep in prototype
+
+	eg Item.prototype.color ='red'
+	   Item.prototype.logItem = function (){
+		console.log(...)
+		}
+
+	The new objects will have these properties and functions inherently, only custom properties are kept in constructor funtion , so memory foot pring is reduced by using reference !
+
+Lesson 2 : Inheriting prototypes or Chaining (Prototype chain)
+		
+		Live.prototype = new Item(); 
+	   
+    Above statement causes the live item to inherit all properties and methods of Item Prototype 
+
+
+chaining eg:
+function Item(){
+	};
+
+function Cut(){};
+Cut.prototype =new Item();
+Cut.prototype.storage ='Cool';
+
+Arrangement.prototype = new Cut();
+
+
+Lesson 3: 
+ES6 class -> newer ways
+
+class Item{ constructor(){this.type ='goods';} logitem(){console.log('hi','font-color : red')}}
+
+class Live extends Item {
+constructor(){
+super();
+}
+}

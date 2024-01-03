@@ -28,3 +28,8 @@ text-align: right;
     transform: rotate(-90deg);
     text-align: left;
  }
+
+ table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }

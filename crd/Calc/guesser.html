@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="icon" type="image/x-icon" href="/images/crown.png">
+    <link rel="stylesheet" href="mystyle.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div id="app">
+        <!-- <span v-for="j in cards" >
+           {{j}}
+        <hr v-if="j.value==13"></hr>
+        </span>
+        <hr> -->
+
+        <table>
+            <tr v-for = "(cardrow,indexr) in deck.cards">
+                <td v-for ="(card,indexc) in cardrow">
+                    <button @click="subs(card)"> - </button>
+                    <!-- <div>{{deck.cards[indexr][indexc]}}</div> -->
+                    <Acard >{{deck.cards[indexr][indexc]}}</Acard>
+                    <button @click="add(card)"> + </button>
+                </td>
+            </tr>
+        </table>
+       Debug info: 
+    </div>
+    <script src="Vue.js"></script>
+    <script type="module" src="guesser.js"></script>
+
+</body>
+
+</html>

@@ -24,3 +24,16 @@ Another example
     <figcaption>{{ x.name }}</figcaption>
   </figure>
 </div>
+
+
+Nested Loop
+<div id="app">
+        <div v-for="j in cards" >
+           {{j}}
+            <span v-for="(item,i) in 1" >
+           {{i+1}}
+            </span>
+        </div>
+        <hr>
+       Debug info: 
+    </div>
