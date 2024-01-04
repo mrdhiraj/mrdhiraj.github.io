@@ -7,8 +7,9 @@ export default {
     };
   },
   template: ` <div>
-  <span class ="ascoreelement"> {{plr.name}} </span>
+  <span > {{datum.color}} {{datum.value}} {{datum.probability_total}} </span>
   </div>`,
+  props :['datum'],
   name: "Acard"
 }
 

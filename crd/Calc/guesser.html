@@ -15,13 +15,13 @@
         <hr v-if="j.value==13"></hr>
         </span>
         <hr> -->
-
+      
         <table>
             <tr v-for = "(cardrow,indexr) in deck.cards">
                 <td v-for ="(card,indexc) in cardrow">
                     <button @click="subs(card)"> - </button>
                     <!-- <div>{{deck.cards[indexr][indexc]}}</div> -->
-                    <Acard >{{deck.cards[indexr][indexc]}}</Acard>
+                    <Acard :datum=deck.cards[indexr][indexc]></Acard>
                     <button @click="add(card)"> + </button>
                 </td>
             </tr>

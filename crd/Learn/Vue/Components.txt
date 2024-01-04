@@ -5,6 +5,7 @@ eg
 
 
 
+-->in component file
 app.component('read-more',
 {
 	template : '<a href =url'> Read </a>,
