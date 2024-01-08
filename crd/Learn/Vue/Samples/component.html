@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My first Vue page</title>
+</head>
+
+<body>
+  <div id="app">
+    
+    Component Example 
+    
+    <Fooditem>
+      The red text
+    </Fooditem>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+
+  const mycomponent = {
+      template: `<h4> This is a Component , it also has variables , methods etc eg : {{var1}} </h4>
+      <div style="color:red;"><slot></slot></div>
+      The red text comes from slot tag in component
+      `
+      ,
+      data() {
+        return {
+          var1: 'nepal'
+        }
+      }
+    }
+
+    const app = Vue.createApp({
+      data() {
+        return {
+          product: ' The product is Apple '
+        }
+      },
+      components:
+      {
+        Fooditem: mycomponent
+      }
+    })
+
+    app.mount('#app')
+
+  </script>
+</body>
+</html>

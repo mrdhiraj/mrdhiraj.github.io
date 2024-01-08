@@ -1,4 +1,4 @@
-import FoodItem from './FoodItem.js'
+import blabla from './FoodItem.js'
 
 var app = new Vue({
     el: '#app',
@@ -20,7 +20,7 @@ var app = new Vue({
     },
     components:
     {
-        Fooditem:FoodItem
+        Fooditem:blabla
     },
     computed :
     {

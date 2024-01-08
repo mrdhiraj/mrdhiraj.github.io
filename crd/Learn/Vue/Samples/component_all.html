@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My first Vue page</title>
+</head>
+
+<body>
+  <div id="app">
+    {{ message }}
+    <br />
+    <Fooditem ref='myComponent' :foodname=product @my-event="gotEvent">
+      this is in slot
+    </Fooditem>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const mycomponent = {
+      template: `<h4 @click="up">Component says :Hi  {{produ}}  <slot></slot> {{data1}} 
+  and the data is {{v1}}
+  </h4>
+  <h2 :v1></h2>`
+      ,
+      props: ["data1"],
+      data() {
+        return {
+          produ: 'nepal',
+          v1: 0
+        }
+      },
+      methods: {
+        up() {
+          this.v1 = this.v1 + 2
+          this.data1 = "hello"
+          this.$emit('my-event', "The product is ball");// we need to emit events to share data to outside world
+        }
+      }
+    }
+
+    const app = Vue.createApp({
+      data() {
+        return {
+          message: "Component Example !",
+          product: ' The product is Apple '
+        }
+      }, methods: {
+        gotEvent(param) {
+          //this is called from event
+          this.product = param
+        },
+        updateAcomponent() {
+          this.$refs.myComponent.produ = "Japan" //or
+          this.$refs["myComponent"].produ = "Japan"
+          console.log(this)//this.$refs.component1.open = true
+        }
+      },
+      components:
+      {
+        Fooditem: mycomponent
+      }
+    })
+
+    app.mount('#app')
+
+  </script>
+</body>
+</html>

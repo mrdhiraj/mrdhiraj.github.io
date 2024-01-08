@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My first Vue page</title>
+</head>
+
+<body>
+  <div id="app">
+    
+    <h1>Component Example </h1>
+
+    <h2>Send data to model in component and use it as variable there </h2>
+    
+    <Fooditem foodname="Apple" >
+      Tasty
+    </Fooditem>
+
+    <Fooditem foodname="Pizza" >
+      Yummy
+    </Fooditem>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+
+  const mycomponent = {
+      template: `<hr/> 
+      {{foodname}}
+      <div style=
+      "color:red;"><slot></slot></div>
+      `
+      ,
+      props: ["foodname"]
+    }
+
+    const app = Vue.createApp({
+      data() {
+        return {
+        }
+      },
+      components:
+      {
+        Fooditem: mycomponent
+      }
+    })
+
+    app.mount('#app')
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My first Vue page</title>
+</head>
+
+<body>
+  <div id="app">
+    
+    <h1>Component Example </h1>
+
+    <h2>Send data to model in component and use it as variable there </h2>
+    
+    <Fooditem foodname="Apple" @component-event="gotEvent">
+      Tasty
+    </Fooditem>
+
+    <Fooditem foodname="Pizza">
+      Yummy
+    </Fooditem>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+
+  const mycomponent = {
+      template: `<hr/> 
+      {{foodname}}
+      <div style="color:red;"  @click="up(3)"><slot></slot></div>
+      `
+      ,
+      props: ["foodname"],
+      methods: {
+        up(d) {
+          this.$emit('component-event', "The product is ball");
+        }
+      }
+    }
+
+    const app = Vue.createApp({
+      data() {
+        return {
+        }
+      },
+      components:
+      {
+        Fooditem: mycomponent
+      },
+      methods:{
+        gotEvent(e){
+          alert(e)
+        }
+      }
+    })
+
+    app.mount('#app')
+
+  </script>
+</body>
+</html>
