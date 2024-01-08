@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My first Vue page</title>
+</head>
+<body>
+
+  <div id="app">
+    {{ message }}
+    <br/>
+    <div v-if="showme">
+    {{'Random number: ' + Math.ceil(Math.random()*6) }}
+    </div>
+    <div v-else-if="value>100">
+      value >100
+      </div>
+    <div v-else>
+      not shown
+      </div>
+
+      <div v-show="showme">Div tag with v-show The visibility is only controled</div>
+  <div v-if="showme">Div tag with v-if The tag is not rendered atall</div>
+
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+          message: "Hello World!",
+          showme:true,
+          value:20
+        }
+      }
+    })
+
+   app.mount('#app')
+
+  </script>
+</body>
+</html>

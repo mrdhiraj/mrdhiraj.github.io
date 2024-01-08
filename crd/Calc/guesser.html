@@ -17,7 +17,17 @@
         <hr> -->
       
         <table>
+          <thead>
+            <tr>
+                <th>S</th>
+                <th>H</th>           
+                <th>C</th>
+                <th>D</th>
+            </tr>
+          </thead>
+            <tbody>
             <tr v-for = "(cardrow,indexr) in deck.cards">
+                <th>{{indexr+1}}</th>
                 <td v-for ="(card,indexc) in cardrow">
                     <button @click="subs(card)"> - </button>
                     <!-- <div>{{deck.cards[indexr][indexc]}}</div> -->
@@ -25,6 +35,7 @@
                     <button @click="add(card)"> + </button>
                 </td>
             </tr>
+          </tbody>
         </table>
        Debug info: 
     </div>

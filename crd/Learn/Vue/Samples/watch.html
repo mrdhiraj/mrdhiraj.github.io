@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Input for e-mail Address</title>
+  <style>
+    #app {
+      border: dashed black 1px;
+      width: 200px;
+      padding: 0 10px 10px 10px;
+    }
+    #app > div {
+      width: 200px;
+      height: 50px;
+      border: solid black 1px;
+      background-color: lightgreen;
+    }
+    #app > p {
+      font-size: large;
+      font-weight: bold;
+    }
+    .valid {
+      color: green;
+    }
+    .invalid {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Example: Input for e-mail Address</h1>
+<p>A watcher is set up to watch the e-mail input. The user is informed if the current e-mail address input is valid or invalid (missing @).</p>
+<p>The user is also informed if the input just became valid with the last input from the keyboard.</p>
+<div id="app">
+  <label>
+    <p>Type a valid e-mail address:</p>
+    <input type="email" v-model="inpAddress">
+  </label>
+  <p v-bind:class="myClass"><code>{{ feedbackText }}</code></p> 
+</div>
+
+
+<pre>
+  <h2>  Watchers vs. Methods</h2>
+Watchers and methods are both written as functions, but there are many differences:
+
+Methods are called from HTML.
+Methods are often called when an event happens.
+Methods automatically receives the event object as an input.
+We can also send other values we choose as an input to a method.
+Watchers are only called when the watched data property value changes, and this happens automatically.
+Watchers automatically receives the new and old value from the watched property.
+We cannot choose to send any other values with a watcher as an input.
+</pre>
+
+<pre>
+   <h2> Watchers vs. Computed Properties</h2>
+Watchers and computed properties are both written as functions.
+
+Watchers and computed properties are both called automatically when a dependency change, and never called from HTML.
+
+Here are some differences between computed properties and watchers:
+
+Watchers only depend on one property, the property they are set up to watch.
+Computed properties can depend on many properties.
+Computed properties are used like data properties, except they are dynamic.
+Watchers are not referred to from HTML.
+</pre>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+  const app = Vue.createApp({
+    data() {
+      return {
+        inpAddress: '',
+        feedbackText: '',
+        myClass: 'invalid'
+      }
+    },
+    watch: {
+      inpAddress(newVal,oldVal) {
+        if(!newVal.includes('@')){
+          this.feedbackText = 'The e-mail address is NOT valid';
+          this.myClass = 'invalid';
+        }
+        else if(!oldVal.includes('@') && newVal.includes('@')) {
+          this.feedbackText = 'Perfect! You fixed it!';
+          this.myClass = 'valid'
+        }
+        else {
+          this.feedbackText = 'The e-mail address is valid :)';
+        }
+      }
+    }
+  })
+ app.mount('#app')
+</script>
+
+</body>
+</html>

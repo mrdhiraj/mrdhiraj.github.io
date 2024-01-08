@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My first Vue page</title>
+</head>
+<body>
+
+  <div id="app">
+Example 1
+      <div v-show="lightOn">Light</div>
+
+    <button v-on:click="lightOn = !lightOn">Switch light</button>
+<hr/>
+Example 2
+    <input v-on:input="inpCount++">
+  <p>{{ 'Input events occured: ' + inpCount }}</p>
+Example 3
+<hr/>
+<p>Move the mouse pointer over the box below</p>
+  <div v-on:mousemove="colorVal=Math.floor(Math.random()*360)"
+       v-bind:style="{backgroundColor:'hsl('+colorVal+',80%,80%)'}">
+       Box
+  </div>
+
+  short hand is @
+
+  <hr/>
+  <b>V-on in a v-for loop </b>
+  <ol>
+    <li v-for="food in manyFoods" @:click="imgUrl=food.url">
+      {{ food.name }}
+    </li>
+  </ol>
+    {{imgUrl}}
+
+<hr/>
+When an event occurs so that a method is called, the event object is passed with the method by default. 
+<p>Move the mouse pointer over the box below:</p>
+{{xPos}}{{yPos}}
+<div v-on:mousemove="mousePos">The box</div>
+<hr/>
+
+we can pass both event and paremeter also in event call
+
+<textarea rows="5" cols="50"><button v-on:click="addAnimal($event, 5)">+5</button>
+  addAnimal(e, number) {
+    ...
+  }
+</textarea>
+
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+          lightOn: true,
+          inpCount: 0,
+          colorVal: 50,
+          imgUrl: 'img_salad.svg',
+        manyFoods: [
+          {name: 'Burrito', url: 'img_burrito.svg'},
+          {name: 'Salad', url: 'img_salad.svg'},
+          {name: 'Cake', url: 'img_cake.svg'},
+          {name: 'Soup', url: 'img_soup.svg'}
+        ],
+        xPos: 0,
+        yPos: 0
+        }
+      },
+    methods: {
+      mousePos(event) {
+        this.xPos = event.offsetX
+        this.yPos = event.offsetY
+        
+      }
+    }
+    })
+
+   app.mount('#app')
+
+  </script>
+</body>
+</html>

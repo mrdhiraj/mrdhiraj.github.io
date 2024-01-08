@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    .pinkBG {
+      background-color: lightpink;
+    }
+    .impClass {
+      font-weight: bolder;
+    }
+    .yelClass {
+      background-color: rgb(255, 255, 136);
+    }
+  </style>
+</head>
+<body>
+
+  <div> 
+    <pre>
+      Syntax <textarea cols="100"> <div v-bind:[attribute]="[Vue data]"></div> </textarea>
+    </pre>
+    <pre>
+      Examples <textarea cols="100" rows="20"> 
+        v-bind:class="vueClass"
+        <img v-bind:src="url">
+
+        <div v-bind:style="{ fontSize: sizenumber + 'px' }">
+
+        </div>
+
+        <div v-bind:style="{ backgroundColor: isImportant ? 'lightcoral' : 'lightgray' }">
+
+          Short hand is :
+
+          
+
+      </textarea>      
+    </pre>
+  </div>
+  
+  <div id="app">
+    <div v-bind:class="vueClass">we can bind any attribute to the data from data model eg vueClass variable in this case</div>
+
+    <div v-bind:style="{ fontSize: size }">Text example</div>
+    <div v-bind:style="{ fontSize: size }">
+      {{size}}
+    </div>
+
+    <div v-bind:style="{ fontSize: sizenumber + 'px' }">
+      By Number
+    </div>
+
+
+    
+
+    <div v-bind:style="{ backgroundColor: 'hsl('+bgVal + ',80%,80%)' }">Notice the background color on this div tag.</div>
+  When the value of bind is object it is calculated 
+  Incase of class only if the value istru
+
+  eg 
+  <div v-bind:style="{ backgroundColor: isImportant ? 'lightcoral' : 'lightgray' }">
+    Conditional background color
+  </div>
+  <div :style="{fontSize:sizenumber+'px'}"> : short hand used</div>
+
+  <hr/>
+  <div v-bind:class="{yelClass: isYellow, impClass: isImportant}">
+    This tag can belong to both the 'impClass' and 'yelClass' classes.
+  </div>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+          vueClass: "pinkBG",
+          size: '28px',
+          sizenumber:40,
+          isImportant:false,
+          bgVal: 45,
+          isYellow:true
+        }
+      }
+    })
+    app.mount('#app')
+  </script>
+</body>
+</html>
