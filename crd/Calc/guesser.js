@@ -154,7 +154,7 @@ var app = new Vue({
     computed:{
         showme(){
             let a=window.navigator.userAgent.match(/windows/i)
-            return a.length==0;
+            return a==null;
         }
     }
 });
