@@ -1,38 +1,28 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <link rel="icon" type="image/x-icon" href="/images/crown.png">
     <link rel="stylesheet" href="mystyle.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
 <body>
-    <div id="app">
-        <!-- <span v-for="j in cards" >
-           {{j}}
-        <hr v-if="j.value==13"></hr>
-        </span>
-        <hr> -->
-      
+    <div id="app">    
         <table>
           <thead>
             <tr>
-                <th>S</th>
-                <th>H</th>           
-                <th>C</th>
-                <th>D</th>
+                <th></th>
+                <th class="B">S</th>
+                <th class="R">H</th>           
+                <th class="B">C</th>
+                <th class="R">D</th>
             </tr>
           </thead>
             <tbody>
             <tr v-for = "(cardrow,indexr) in deck.cards">
                 <th>{{indexr+1}}</th>
-                <td v-for ="(card,indexc) in cardrow">
-                    <button @click="subs(card)"> - </button>
-                    <!-- <div>{{deck.cards[indexr][indexc]}}</div> -->
-                    <Acard :datum=deck.cards[indexr][indexc]></Acard>
-                    <button @click="add(card)"> + </button>
+                <td v-for ="(card,indexc) in cardrow">                                                                         
+                    <Acard :datum=deck.cards[indexr][indexc] @my-event="addsubs"></Acard>                    
                 </td>
             </tr>
           </tbody>
@@ -41,7 +31,5 @@
     </div>
     <script src="Vue.js"></script>
     <script type="module" src="guesser.js"></script>
-
 </body>
-
 </html>

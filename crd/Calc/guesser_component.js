@@ -1,20 +1,20 @@
 export default {
   data() {
     return {
-      plr: {
-        name: "hi"
-      }
+      plr: 1
     };
-  }, 
+  },
   methods: {
-    changeFontSize() {
-      this.$refs.myParagraph.style.fontSize = '20px';
+    add() {
+      this.$emit('my-event', this.datum.color,this.datum.value,"a")    
+    },
+    subs() {
+      this.$emit('my-event', this.datum.color,this.datum.value,"s")
     }
   },
-  template: ` <div>
-  <button @click ="changeFontSize">hello</button>
-  <span ref="myParagraph" style="font-size: ${1 + 9}px"> {{datum.color}} {{datum.value}} {{datum.probability_total}} </span>
-  </div>`,
+  template: `<div><span @click="add()" class="btnplus"> + </span>          
+  <span ref="myParagraph" class="score"> {{datum.probability_total}} </span>
+  <span @click="subs()" class="btnminus"> - </span></div>`,
   props: ['datum'],
   name: "Acard"
 }

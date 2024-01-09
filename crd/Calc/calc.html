@@ -22,7 +22,6 @@
         <span class="rotate-text"> Rs </span>
         
         <Ascore ref="onescore" :url=x v-for="(x,i) in collect" @my-event="event_clear" @winner-changed="winnerchangecalled" >
-
         </Ascore>  
         <!-- the events function should be called without parameters to get object from caller -->
         <button @click="docalculation"> Calculate</button>
