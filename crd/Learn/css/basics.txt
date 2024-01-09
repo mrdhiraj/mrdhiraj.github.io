@@ -11,3 +11,5 @@ specifity
 .myclass {
   background-color: gray;!important;
 }
+
+we can define selectors multiple times and all of these will be merged

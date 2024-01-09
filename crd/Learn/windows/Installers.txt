@@ -1,0 +1,17 @@
+https://scoop.sh/
+
+> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+> Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+
+
+
+scoop update
+scoop search nodejs
+scoop install nodejs-lts
+
+
+node --version
+
+
+
+__________similary winget

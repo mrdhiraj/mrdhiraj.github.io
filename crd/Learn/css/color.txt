@@ -1,0 +1,17 @@
+https://www.w3schools.com/colors/colors_names.asp
+
+Colors are specified using predefined color names, or RGB, HEX, HSL, RGBA, HSLA values.
+
+RGB An RGB color value represents RED, GREEN, and BLUE light sources. 255,255,255
+
+HEX
+A hexadecimal color is specified with: #RRGGBB,
+ where the RR (red), GG (green) and BB (blue) hexadecimal integers specify the components of the color.
+
+
+HSL
+HSL stands for hue, saturation, and lightness.
+
+hue : 0 to 360
+saturation : 0 to 100
+lightness : 0 to 360

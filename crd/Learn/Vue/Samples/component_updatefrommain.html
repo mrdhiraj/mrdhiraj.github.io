@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My first Vue page</title>
+</head>
+
+<body>
+  <div id="app">
+    
+    <h1>Component Example </h1>
+
+    <li>Update a component from main js</li>
+    
+    <button @click="updatecomponent">Update</button>
+    <Fooditem ref="component1" foodname="Apple" >
+      Tasty
+    </Fooditem>
+
+    <Fooditem foodname="Pizza" >
+      Yummy
+    </Fooditem>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+
+  const mycomponent = {
+      template: `<hr/> 
+      {{foodname}} -- {{name}}
+      <div style=
+      "color:red;"><slot></slot></div>
+      `
+      ,
+      props: ["foodname"],
+      data(){
+        return {
+          name:"Nepal"
+        }
+      }
+    }
+
+    const app = Vue.createApp({
+      data() {
+        return {
+        }
+      },
+      components:
+      {
+        Fooditem: mycomponent
+      },
+      methods:{
+        updatecomponent(){
+          this.$refs.component1.name = "Japan" //or
+          this.$refs["component1"].name = "Japan"
+        }
+      }
+    })
+
+    app.mount('#app')
+
+  </script>
+</body>
+</html>

@@ -9,13 +9,16 @@
     
     <h1>Component Example </h1>
 
-    <h2>Send data to model in component and use it as variable there </h2>
+    <li>We can send data from attribute of component, we catch it using props </li>
+    <li>We can also bind it like other atturbutes</li>
+    <li>We can also send data using slot </li>
+    <li>We can call event to main js from component js</li>
     
     <Fooditem foodname="Apple" @component-event="gotEvent">
       Tasty
     </Fooditem>
 
-    <Fooditem foodname="Pizza">
+    <Fooditem foodname="Pizza" @component-event="gotEvent">
       Yummy
     </Fooditem>
   </div>
@@ -32,7 +35,7 @@
       props: ["foodname"],
       methods: {
         up(d) {
-          this.$emit('component-event', "The product is ball");
+          this.$emit('component-event', "This message is sent from component :" + this.foodname);
         }
       }
     }
@@ -47,8 +50,8 @@
         Fooditem: mycomponent
       },
       methods:{
-        gotEvent(e){
-          alert(e)
+        gotEvent(messsagefromcomponent){
+          alert(messsagefromcomponent)
         }
       }
     })

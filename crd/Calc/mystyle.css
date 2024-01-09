@@ -22,6 +22,13 @@ margin-top:14px;
 text-align: right;
 }
 
+.arowelement{
+  display:inline-block;  
+  color:green;
+  margin-top:14px;
+  text-align: right;
+  }
+
 .rotate-text {
     display:inline-block;
     width: 40px;
@@ -43,3 +50,39 @@ text-align: right;
     text-align: center;
     font-size: 22px;
   }
+
+.btnplus
+{
+    background-color: rgb(4, 121, 52);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 2px 12px 3px 12px;
+    text-decoration: none;
+}
+
+.btnminus
+{
+    background-color: rgb(167, 7, 119);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 2px 12px 3px 12px;
+    text-decoration: none;
+}
+
+.R
+{
+  color:crimson
+}
+
+.B{
+  color: black;
+}
+
+.score{
+  display:inline-block;  
+  width:40px;
+  text-align: right;
+  }
+
