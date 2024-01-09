@@ -150,6 +150,12 @@ var app = new Vue({
             let s= action =="a"? this.deck.picked(value, color): this.deck.discarded(value, color)
             this.$forceUpdate();
         }
+    },
+    computed:{
+        showme(){
+            let a=window.navigator.userAgent.match(/windows/i)
+            return a.length==0;
+        }
     }
 });
 Vue.config.devtools = true;
