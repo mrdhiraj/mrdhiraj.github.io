@@ -1,0 +1,9 @@
+%
+
+px
+
+em = px/16
+ie 16px = 1 em
+
+1vw viewport width
+1vw = 1% of viewport width. If the viewport is 50cm wide, 1vw is 0.5cm
