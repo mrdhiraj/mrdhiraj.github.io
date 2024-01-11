@@ -39,4 +39,9 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_selectors
 }
 
 
-      
+nth element
+
+/* Selects the second element of div siblings */
+div:nth-of-type(2) {
+  background: red;
+}
