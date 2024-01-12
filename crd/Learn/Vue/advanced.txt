@@ -1,0 +1,7 @@
+<div id="app">
+  <p v-text="pText">Old text.</p>
+</div>
+
+is same as {{pText}}
+
+to display html use v-html

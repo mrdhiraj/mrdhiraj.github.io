@@ -21,7 +21,7 @@ export default {
   <div title="Jhip" class="grid-item" @click="subs()">{{datum.probability_jhip}} </div>
   <div title="Alt" class="grid-item"><span @click="add()">{{datum.probability_alt}} </span></div>
   <div title="J" class="grid-item"><span @click="add()">{{datum.probability_j}} </span></div>
-  <div title="Total" class="grid-item" span @click="add()"> <span ref="myParagraph" class="score"> {{datum.probability_total}} </span></div>
+  <div title="Total" span @click="add()" :class ="{R:datum.probability_final==-1}" > <span ref="myParagraph" class="score"> {{datum.probability_total}} </span></div>
 </div>
   `,
   props: ['datum'],

@@ -1,3 +1,15 @@
+External CSS : <link rel="stylesheet" href="mystyle.css">
+Internal CSS : <style>
+body {
+  background-color: linen;
+}
+</style>
+Inline CSS : <h1 style="color:blue;text-align:center;">This is a heading</h1>
+
+
+
+
+
 cascading ; 
  the cascading is based on specificity 
 	id > class > element 

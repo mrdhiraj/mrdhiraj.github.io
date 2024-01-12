@@ -10,6 +10,7 @@ class Crd {
     probability_jhip = 0
     probability_pop = 0
     probability_total = 0
+    probability_final = 0
 
     actions = {
         picked: 0,
@@ -50,10 +51,82 @@ class Deck {
     }
 
     doaction(value, color, increament) {
+        //sure alogrithm
         let altcolor = this.getaltcolors(color)
-        let downvalue = this.getdown(value)
-        let upvalue = this.getup(value)
+        let downvalue = this.getIncreamental(value, -1)
+        let downvalue2 = this.getIncreamental(value, -2)
+        let upvalue = this.getIncreamental(value)
+        let upvalue2 = this.getIncreamental(value, 2)
+        let samevalue = value - 1
 
+        //final , j , jhip ,alt , tip , pop 
+        //same value
+        let curvalue = samevalue
+        if (increament == -1) {
+            curvalue = samevalue
+            this.cards[curvalue][color].probability_final = -1;
+
+            for (const key in this.cards[curvalue]) {
+                this.cards[curvalue][key].probability_j = -1;
+            }
+            this.cards[curvalue][color].probability_jhip = -1;
+            this.cards[curvalue][altcolor].probability_alt = -1;
+            this.cards[curvalue][color].probability_tip = -1;
+            this.cards[curvalue][color].probability_pop = -1;
+
+
+            //up value
+            curvalue = upvalue
+
+            this.cards[curvalue][color].probability_j = -1;
+            this.cards[curvalue][color].probability_jhip = -1;
+            this.cards[curvalue][altcolor].probability_alt = -1;
+
+            //down value
+            curvalue = downvalue
+
+            this.cards[curvalue][color].probability_j = -1;
+            this.cards[curvalue][color].probability_jhip = -1;
+            this.cards[curvalue][altcolor].probability_alt = -1;
+        } else {
+            curvalue = samevalue
+            this.cards[curvalue][color].probability_final = this.cards[curvalue][color].probability_final != -1 ? 1 : -1
+
+            for (const key in this.cards[curvalue]) {
+                this.cards[curvalue][key].probability_j = this.cards[curvalue][key].probability_j != -1 ? 1 : -1;
+            }
+            this.cards[curvalue][color].probability_jhip = this.cards[curvalue][color].probability_jhip != -1 ? 1 : -1;
+            this.cards[curvalue][altcolor].probability_alt = this.cards[curvalue][altcolor].probability_alt != -1 ? 1 : -1;
+            this.cards[curvalue][color].probability_tip = this.cards[curvalue][color].probability_tip != -1 ? 1 : -1;
+            this.cards[curvalue][color].probability_pop = this.cards[curvalue][color].probability_pop != -1 ? 1 : -1;
+
+
+            //up value
+            curvalue = upvalue
+
+            this.cards[curvalue][color].probability_j = this.cards[curvalue][color].probability_j != -1 ? 1 : -1;
+            this.cards[curvalue][color].probability_jhip = this.cards[curvalue][color].probability_jhip != -1 ? 1 : -1;
+            this.cards[curvalue][altcolor].probability_alt = this.cards[curvalue][altcolor].probability_alt != -1 ? 1 : - 1;
+
+            //down value
+            curvalue = downvalue
+
+            this.cards[curvalue][color].probability_j = this.cards[curvalue][color].probability_j != -1 ? 1 : -1;
+            this.cards[curvalue][color].probability_jhip = this.cards[curvalue][color].probability_jhip != -1 ? 1 : -1;
+            this.cards[curvalue][altcolor].probability_alt = this.cards[curvalue][altcolor].probability_alt != -1 ? 1 : -1;
+        }
+
+        //totals 
+        this.cards[samevalue][color].gettotal()
+        this.cards[samevalue][altcolor].gettotal()
+        this.cards[upvalue][color].gettotal()
+        this.cards[downvalue][color].gettotal()
+        for (const key in this.cards[value - 1]) {
+            this.cards[samevalue][key].gettotal()
+        }
+    }
+
+    algo1 = function () {
         //j
         for (const key in this.cards[value - 1]) {
             this.cards[value - 1][key].probability_j += increament;
@@ -94,9 +167,6 @@ class Deck {
         this.cards[value - 1][altcolor].gettotal()
         this.cards[upvalue][color].gettotal()
         this.cards[downvalue][color].gettotal()
-        for (const key in this.cards[value - 1]) {
-            this.cards[value - 1][key].gettotal()
-        }
     }
 
     getparallels = function (value, color) {
@@ -108,31 +178,15 @@ class Deck {
         return altcolor
     }
 
-    getup(value) {
-        let index = value - 1
-        let upvalue = index == 12 ? index = 0 : index = index + 1
-        return upvalue
-    }
-
-    get2up(value) {
-        let v = value + 2
+    //-1 
+    getIncreamental(value, inc = 1) {
+        let v = value + inc
         let upvalue = 0
-        upvalue = v > 13 ? v - 13 : v
+
+        upvalue = v > 13 ? v - 13 : v < 1 ? v + 13 : v
         return upvalue
     }
 
-    getdown(value) {
-        let index = value - 1
-        let downvalue = index == 0 ? index = 12 : index = index - 1
-        return downvalue
-    }
-
-    get2down(value) {
-        let v = value - 2
-        let upvalue = 0
-        upvalue = v < 1 ? v + 13 : v
-        return upvalue
-    }
 }
 
 var app = new Vue({
@@ -140,21 +194,78 @@ var app = new Vue({
     components:
     {
         Acard: Acard
-    },    
+    },
     data: {
         debugmessage: "Debug Info will come here",
-        deck: new Deck()
+        deck: new Deck(),
+        testresult: "Test result is displayed here",
+        debug: false
     },
     methods: {
-        addsubs(color,value,action) {           
-            let s= action =="a"? this.deck.picked(value, color): this.deck.discarded(value, color)
+        addsubs(color, value, action) {
+            let s = action == "a" ? this.deck.picked(value, color) : this.deck.discarded(value, color)
             this.$forceUpdate();
+        },
+        dotest() {
+            let d = new Deck();
+            let i = 0
+            let o = 0
+            let t = ''
+            let ft = ''
+
+            ft = ft + '1 <br/>'
+            i = 1; o = d.getIncreamental(i, 1); t = `input ${i} output ${o}`; ft = ft + '<br/>' + t;
+
+            i = 2; o = d.getIncreamental(i, 1); t = `input ${i} output ${o}\n`; ft = ft + '<br/>' + t;
+
+            i = 3; o = d.getIncreamental(i, 1); t = `input ${i} output ${o}\n`; ft = ft + '<br/>' + t;
+
+            i = 12; o = d.getIncreamental(i, 1); t = `input ${i} output ${o}\n`; ft = ft + '<br/>' + t;
+
+            i = 13; o = d.getIncreamental(i, 1); t = `input ${i} output ${o}\n`; ft = ft + '<br/>' + t;
+            ft = ft + '-1 <br/>'
+
+            i = 1; o = d.getIncreamental(i, -1); t = `input ${i} output ${o}`; ft = ft + '<br/>' + t;
+
+            i = 2; o = d.getIncreamental(i, -1); t = `input ${i} output ${o}\n`; ft = ft + '<br/>' + t;
+
+            i = 3; o = d.getIncreamental(i, -1); t = `input ${i} output ${o}\n`; ft = ft + '<br/>' + t;
+
+            i = 12; o = d.getIncreamental(i, -1); t = `input ${i} output ${o}\n`; ft = ft + '<br/>' + t;
+
+            i = 13; o = d.getIncreamental(i, -1); t = `input ${i} output ${o}\n`; ft = ft + '<br/>' + t;
+
+            ft = ft + '2 <br/>'
+
+            i = 1; o = d.getIncreamental(i, 2); t = `input ${i} output ${o}`; ft = ft + '<br/>' + t;
+
+            i = 2; o = d.getIncreamental(i, 2); t = `input ${i} output ${o}\n`; ft = ft + '<br/>' + t;
+
+            i = 3; o = d.getIncreamental(i, 2); t = `input ${i} output ${o}\n`; ft = ft + '<br/>' + t;
+
+            i = 12; o = d.getIncreamental(i, 2); t = `input ${i} output ${o}\n`; ft = ft + '<br/>' + t;
+
+            i = 13; o = d.getIncreamental(i, 2); t = `input ${i} output ${o}\n`; ft = ft + '<br/>' + t;
+
+            ft = ft + '-2 <br/>'
+
+            i = 1; o = d.getIncreamental(i, -2); t = `input ${i} output ${o}`; ft = ft + '<br/>' + t;
+
+            i = 2; o = d.getIncreamental(i, -2); t = `input ${i} output ${o}\n`; ft = ft + '<br/>' + t;
+
+            i = 3; o = d.getIncreamental(i, -2); t = `input ${i} output ${o}\n`; ft = ft + '<br/>' + t;
+
+            i = 12; o = d.getIncreamental(i, -2); t = `input ${i} output ${o}\n`; ft = ft + '<br/>' + t;
+
+            i = 13; o = d.getIncreamental(i, -2); t = `input ${i} output ${o}\n`; ft = ft + '<br/>' + t;
+
+            this.testresult = ft
         }
     },
-    computed:{
-        showme(){
-            let a=window.navigator.userAgent.match(/windows/i)
-            return a==null;
+    computed: {
+        showme() {
+            let a = window.navigator.userAgent.match(/windows/i)
+            return a == null;
         }
     }
 });
