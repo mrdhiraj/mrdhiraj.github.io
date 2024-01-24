@@ -1,0 +1,7 @@
+React can be run on browser easily , but the React.createElement syntax quickly becomes heavy , to solve this we use babel , babel can also be run on browser but it is not recomended for production!
+
+Babel: interprets any thing in <script type="text/babel"> using in browser js
+
+JSX : It is powerful , we can use {} to inject js codes
+
+Component : It is a javascript funtion that returns JSX , Use cap case eg : <Header>

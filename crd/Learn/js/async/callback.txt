@@ -1,0 +1,56 @@
+Example 1
+
+function myDisplayer(some) {
+  document.getElementById("demo").innerHTML = some;
+}
+
+function myCalculator(num1, num2, myCallback) {
+  let sum = num1 + num2;
+  myCallback(sum);
+}
+
+myCalculator(5, 5, myDisplayer);
+
+
+
+
+Example 2
+
+// Create an Array
+const myNumbers = [4, 1, -20, -7, 5, 9, -6];
+
+// Call removeNeg with a callback
+const posNumbers = removeNeg(myNumbers, (x) => x >= 0);
+
+// Display Result
+document.getElementById("demo").innerHTML = posNumbers;
+
+// Keep only positive numbers
+function removeNeg(numbers, callback) {
+  const myArray = [];
+  for (const x of numbers) {
+    if (callback(x)) {
+      myArray.push(x);
+    }
+  }
+  return myArray;
+}
+
+Example 3
+
+setTimeout(myFunction, 3000);
+
+function myFunction() {
+  document.getElementById("demo").innerHTML = "I love You !!";
+}
+
+Example 4
+setInterval(myFunction, 1000);
+
+function myFunction() {
+  let d = new Date();
+  document.getElementById("demo").innerHTML=
+  d.getHours() + ":" +
+  d.getMinutes() + ":" +
+  d.getSeconds();
+}

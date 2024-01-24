@@ -2,4 +2,4 @@ Js
 ----
 20240102:	Use associative array (same as object)
 		force update vue js render : this.$forceUpdate();
-	
+20240124:	NPM

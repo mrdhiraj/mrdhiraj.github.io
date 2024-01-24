@@ -1,0 +1,37 @@
+Promise is a js object
+
+
+Promise.then() takes two arguments, a callback for success and another for failure.
+
+Both are optional, so you can add a callback for success or failure only.
+
+
+myPromise.then(
+  function(value) { /* code if successful */ },
+  function(error) { /* code if some error */ }
+);
+
+
+
+
+Example :
+
+let p = new Promise((resolve,rejesct)=>{
+if (true) {
+  resolve('success')
+}
+else{
+  reject('failsed')
+}
+})
+
+-- then is called if succes (reslove), other wise cathc is called  (reject)
+p.then ((message)=>{
+console.log('this is in the then' + message)
+}).catch((message)=> {
+console.log('this is in the catch' + message)
+})
+
+
+
+-------------------------------

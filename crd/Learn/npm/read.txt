@@ -1,0 +1,25 @@
+npm is package manager , it has the file package.json where all details of package are listed.
+
+The dependancies can be only dev time dependancy or prod dependancy
+
+some commands
+
+Install specific version 
+	 npm install esling@5.2.0
+
+Find outdated packages
+	npm outdated
+
+Update
+	npm update 
+
+Remove 
+	npm uninstall eslint
+
+Options
+
+-save-dev
+ only dev: eg npm install esling@5.2.0 -save-dev
+-g
+ golbal
+
