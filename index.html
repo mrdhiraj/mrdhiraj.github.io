@@ -25,42 +25,51 @@
 <body>
     <div class='container'>
         <div class='ver'>
-            <div class="hor">
-            <label>Delimiter</label>
-            <textarea rows="1" cols="3" id="delimitertxt" placeholder="Delimiter">,</textarea>
-        </div>
-            <textarea rows="3" cols="20" id="findtxt" placeholder="Find"></textarea>
-
-            <textarea rows=5 cols="80" id="templatetxt" placeholder="Template"></textarea>
-           
-        </div>
-        <div class = 'hor'>
-            <div id="templates" class='template'></div>
-            <button id="btnSaveTemplate">Save</button>
-       </div>
-        <div class='hor'>
-            
-            <div class = 'ver'>
-                <textarea rows="9" cols="100" width=100% id="mainttxt" placeholder="Input"></textarea>
-                <textarea rows="9" width=100% id="outtxt" placeholder="Output"></textarea>
+            <div class='hor'>
+                <div class='ver'>
+                    <textarea rows="9" cols="100" width=100% id="mainttxt" placeholder="Input"></textarea>
+                    <textarea rows="9" width=100% id="outtxt" placeholder="Output"></textarea>
+                </div>
+                <div class='ver'>
+                    <button class="top" id="btnCollon">Collonize</button>
+                    <button class="top" id="btnComments">Comments</button>
+                    <button class="top" id="btnTables">Tables</button>
+                    <button class="top" id="btnDistinct">Distinct</button>
+                    <button class="top" id="btncopy">Copy Output</button>
+                </div>
             </div>
-             <div class ='ver'>
-                <button class="top" id="btnCollon">Collonize</button>
-                <button class="top" id="btnComments">Comments</button>
-                <button class="top" id="btnTables">Tables</button>
-                <button class="top" id="btnDistinct">Distinct</button>
-             </div>
-            
-        </div>    
-        <div>
-        <button class="bottom" id="btnReplace">Apply Template</button>
-        <button class="bottom" id="btncopy">Copy Output</button>
-    </div>    
-    </div>
+       
+        </div>
+        <hr>
+        Template area
+        <div class='ver'>
    
-    <script src="standardFunctions.js"></script>
+            <div class='ver'>
+                <div class='hor'>
+                    <textarea rows="3" cols="20" id="findtxt" placeholder="Template Variable"></textarea>
+                    <textarea rows=5 cols="80" id="templatetxt" placeholder="Template"></textarea>
+                    <div id="templates" class='template'></div>
+                </div>
+                <div class="hor">
+                    
+                    <label>Template Delimiter</label>
+                    <textarea rows="1" cols="3" id="delimitertxt" placeholder="Delimiter">,</textarea>
+                   
+                    <div class='hor'>
+                        
+                        <button id="btnSaveTemplate">Save Template</button>
+                        <button id="btnReplace">Apply Template</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    
     <script src="textParser.js"></script>
     <script src="script.js"></script>
-
+    <script src="standardFunctions.js"></script>
 </body>
+
 </html>
