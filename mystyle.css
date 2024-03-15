@@ -19,7 +19,7 @@ body {
 .ver {
     display: flex;
     flex-direction: column;
-    padding: 10px
+    padding: 2px
         /* 2 COL LAYOUT */
 }
 
@@ -27,7 +27,7 @@ body {
 .hor {
     display: flex;
     flex-direction: row;
-    padding: 10px
+    padding: 2px
         /* 2 COL LAYOUT */
 }
 
@@ -43,7 +43,7 @@ button {
     /* Green */
     border: none;
     color: white;
-    padding: 10px 32px;
+    padding: 8px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -117,7 +117,7 @@ button:hover {
 }
 
 .tal {
-    margin-right: 10cm;
+    margin-right: 12cm;
     text-align: left;
 }
 
