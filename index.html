@@ -6,7 +6,6 @@
 
     <link rel="stylesheet" href="mystyle.css">
 
-
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164000035-1"></script>
     <script>
@@ -23,7 +22,7 @@
 </head>
 
 <body>
-    
+
     <div class='container'>
         <div class='ver'>
             <div class='hor'>
@@ -43,21 +42,26 @@
         </div>
 
         <div class="hr-sect">Template Area</div>
-    
+
         <div class='ver'>
 
             <div class='ver'>
                 <div class='hor'>
-                    <textarea rows="3" cols="20" id="findtxt" placeholder="Template Variable"></textarea>
+                    <textarea rows="3" cols="15" id="findtxt" placeholder="Template Variable"></textarea>
                     <textarea rows=5 cols="80" id="templatetxt" placeholder="Template"></textarea>
-                    <div id="templates" class='template'></div>
-                </div>
-                <div class="hor">
-                    <span id="lblDelimiter">Template Delimiter : </span> <span id="valDelimeter"> , </span>
-                    <div class='hor'>
-                        <button id="btnSaveTemplate">Save Template</button>
-                        <button id="btnReplace">Apply Template</button>
+                    <div class="ver">
+                        <div id="templates" class="ver">
+                        </div>
+                        <button id="btnSaveTemplate" class="tac">Save New</button>
                     </div>
+                </div>
+                <div class="tar">
+                    <span class="lightfont tal">
+                        <span id="lblDelimiter">Template Delimiter : </span> <span id="valDelimeter"> , </span>
+                    </span>
+
+                    <button id="btnReplace">Apply Template</button>
+
                 </div>
 
             </div>
