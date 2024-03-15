@@ -26,9 +26,9 @@ function getComments() {
         var arrayLength = myStringArray.length;
         for (var i = 0; i < arrayLength; i++) {
             outtxt = outtxt + '\n' + myStringArray[i]
-        }
-        document.getElementById("outtxt").value = outtxt;
+        }        
     }
+    document.getElementById("outtxt").value = outtxt.trim();
 }
 
 
@@ -79,8 +79,8 @@ function getTables() {
             destitxt = destitxt + '\n select * ' + myStringArray[i].replace(/into/gi, 'from') + ';';
         }
     }
-
-    document.getElementById("outtxt").value = outtxt + '\n \n' + destitxt;
+    outtxt= outtxt + '\n \n' + destitxt;
+    document.getElementById("outtxt").value = outtxt.trim();
 };
 
 
@@ -101,12 +101,14 @@ function doCollonize() {
         }
     }
 
-    document.getElementById("outtxt").value = outtxt;
+    document.getElementById("outtxt").value = outtxt.trim();;
 }
 
 function doReplace() {
     var findtxt = document.getElementById("findtxt").value;
-    var delimitertxt = document.getElementById("delimitertxt").value;
+    
+    var delimitertxt = varTemplateDelimiter //document.getElementById("delimitertxt").value;
+
     var maintext = document.getElementById("mainttxt").value;
     var templatetxt = document.getElementById("templatetxt").value;
     var outtxt = "";
@@ -137,5 +139,5 @@ function doReplace() {
             outtxt += temp + "\n";
         }
     }
-    document.getElementById("outtxt").value = outtxt;
+    document.getElementById("outtxt").value = outtxt.trim();;
 }

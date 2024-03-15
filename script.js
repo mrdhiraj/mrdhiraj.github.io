@@ -1,18 +1,26 @@
+var varTemplateDelimiter =","
 var btnReplace = document.getElementById("btnReplace");
 var btnComments = document.getElementById("btnComments");
 var btnTables = document.getElementById("btnTables");
 var btncollonize = document.getElementById("btnCollon");
 
+var lblDelimiter = document.getElementById("lblDelimiter");
 
 btnReplace.onclick = doReplace;
 btnComments.onclick = getComments;
 btnTables.onclick = getTables;
 btncollonize.onclick = doCollonize;
 
+lblDelimiter.onclick= doChangeDelimiter;
+
 btncopy.onclick = copyOutput;
 btnSaveTemplate.onclick = saveTemplate;
 btnDistinct.onclick = getDistincts;
 
+function doChangeDelimiter() {
+    varTemplateDelimiter = prompt('Give new Template delimiter...')
+    document.getElementById("valDelimeter").innerText=varTemplateDelimiter
+}
 
 function copyOutput() {
     copy_to_clipboard('outtxt')

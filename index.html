@@ -23,6 +23,7 @@
 </head>
 
 <body>
+    
     <div class='container'>
         <div class='ver'>
             <div class='hor'>
@@ -38,12 +39,13 @@
                     <button class="top" id="btncopy">Copy Output</button>
                 </div>
             </div>
-       
+
         </div>
-        <hr>
-        Template area
+
+        <div class="hr-sect">Template Area</div>
+    
         <div class='ver'>
-   
+
             <div class='ver'>
                 <div class='hor'>
                     <textarea rows="3" cols="20" id="findtxt" placeholder="Template Variable"></textarea>
@@ -51,25 +53,21 @@
                     <div id="templates" class='template'></div>
                 </div>
                 <div class="hor">
-                    
-                    <label>Template Delimiter</label>
-                    <textarea rows="1" cols="3" id="delimitertxt" placeholder="Delimiter">,</textarea>
-                   
+                    <span id="lblDelimiter">Template Delimiter : </span> <span id="valDelimeter"> , </span>
                     <div class='hor'>
-                        
                         <button id="btnSaveTemplate">Save Template</button>
                         <button id="btnReplace">Apply Template</button>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>
-    
+
     <script src="standardFunctions.js"></script>
     <script src="textParser.js"></script>
     <script src="script.js"></script>
-  
+
 </body>
 
 </html>
