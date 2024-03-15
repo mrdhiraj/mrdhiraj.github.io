@@ -1,23 +1,18 @@
-var btnComments = document.getElementById("btnComments");
-var btnTables = document.getElementById("btnTables");
 
-btnComments.onclick = getComments;
-btnTables.onclick = getTables;
-btnDistinct.onclick =getDistincts;
 
 function getDistincts() {
     var intxt = document.getElementById("mainttxt").value.toUpperCase();
-    var outtxt = ''; 
+    var outtxt = '';
     var myStringArray = intxt.split("\n");
     if (myStringArray) {
-        myStringArray=removeDuplicates(myStringArray);
+        myStringArray = removeDuplicates(myStringArray);
         var arrayLength = myStringArray.length;
         myStringArray = myStringArray.sort()
         for (var i = 0; i < arrayLength; i++) {
-            outtxt =  outtxt + '\n' + myStringArray[i] ;
+            outtxt = outtxt + '\n' + myStringArray[i];
         }
     }
-    document.getElementById("outtxt").value = outtxt.trim() ;
+    document.getElementById("outtxt").value = outtxt.trim();
 }
 
 function getComments() {
@@ -27,13 +22,12 @@ function getComments() {
     var regx = /--.*/gm;
 
     var myStringArray = intxt.match(regx);
-    if(myStringArray)
-    {
-    var arrayLength = myStringArray.length;
-    for (var i = 0; i < arrayLength; i++) {
-        outtxt = outtxt + '\n' + myStringArray[i]
-    }
-    document.getElementById("outtxt").value = outtxt;
+    if (myStringArray) {
+        var arrayLength = myStringArray.length;
+        for (var i = 0; i < arrayLength; i++) {
+            outtxt = outtxt + '\n' + myStringArray[i]
+        }
+        document.getElementById("outtxt").value = outtxt;
     }
 }
 
@@ -44,13 +38,13 @@ function getTables() {
     var outtxt = '';
 
     //var regx= /from (\S+)|join (\S+)/gmi;
-    
+
     //from
     var regx = /from[ ]+(\S+)/gmi;
     var myStringArray = intxt.match(regx);
     if (myStringArray) {
         //myStringArray = myStringArray.unique();
-        myStringArray=removeDuplicates(myStringArray);
+        myStringArray = removeDuplicates(myStringArray);
         var arrayLength = myStringArray.length;
 
         for (var i = 0; i < arrayLength; i++) {
@@ -71,9 +65,9 @@ function getTables() {
         }
     }
 
- 	//Destinations
- 	var destitxt ='';
-     
+    //Destinations
+    var destitxt = '';
+
     //into
     var regx = /into[ ]+(\S+)/gmi;
     var myStringArray = intxt.match(regx);
@@ -85,8 +79,8 @@ function getTables() {
             destitxt = destitxt + '\n select * ' + myStringArray[i].replace(/into/gi, 'from') + ';';
         }
     }
-    
-    document.getElementById("outtxt").value = outtxt + '\n \n'+ destitxt;
+
+    document.getElementById("outtxt").value = outtxt + '\n \n' + destitxt;
 };
 
 
@@ -95,17 +89,17 @@ function doCollonize() {
     var findtxt = document.getElementById("mainttxt").value;
     var lines = findtxt.split("\n");
     var outtxt = "";
-for (i = 0; i < lines.length; i++) {
-  var item = lines[i];
+    for (i = 0; i < lines.length; i++) {
+        var item = lines[i];
         if (item.length > 0) {
-            if (i==lines.length-1){
-            outtxt += "'" + item.trim() +"'" ;
+            if (i == lines.length - 1) {
+                outtxt += "'" + item.trim() + "'";
             }
-            else{
+            else {
                 outtxt += "'" + item.trim() + "',\n";
             }
         }
-}
+    }
 
     document.getElementById("outtxt").value = outtxt;
 }
@@ -137,10 +131,10 @@ function doReplace() {
                 if (findS[i].length < 1) {
                     continue;
                 }
-                var re = new RegExp(findS[i].trim(),'g');
+                var re = new RegExp(findS[i].trim(), 'g');
                 temp = temp.replace(re, lstitemS[i]);
             }
-            outtxt += temp +  "\n";
+            outtxt += temp + "\n";
         }
     }
     document.getElementById("outtxt").value = outtxt;
