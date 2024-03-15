@@ -82,6 +82,7 @@ function templateClicked(tname) {
         t = JSON.parse(template)
         document.getElementById("templatetxt").value = t.templatetxt
         document.getElementById("findtxt").value = t.findtxt
+        doReplace()
     }
 }
 
