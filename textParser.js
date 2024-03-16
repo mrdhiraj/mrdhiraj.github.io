@@ -139,5 +139,5 @@ function doReplace() {
             outtxt += temp + "\n";
         }
     }
-    document.getElementById("outtxt").value = outtxt.trim();;
+    document.getElementById("outtxt").value = outtxt;
 }

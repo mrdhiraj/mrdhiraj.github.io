@@ -18,7 +18,8 @@ btnSaveTemplate.onclick = saveTemplate;
 btnDistinct.onclick = getDistincts;
 
 function doChangeDelimiter() {
-    varTemplateDelimiter = prompt('Give new Template delimiter...')
+    val= prompt('Give new Template delimiter...',varTemplateDelimiter)
+    varTemplateDelimiter = val?val:varTemplateDelimiter
     document.getElementById("valDelimeter").innerText=varTemplateDelimiter
 }
 
@@ -98,8 +99,8 @@ function saveTemplate() {
             findtxt: findtxt
         }
         localStorage.setItem(templatename, JSON.stringify(item));
+        renderTemplates()
     }
-    renderTemplates()
 }
 
 
@@ -119,6 +120,19 @@ function someDefaultTemplates() {
         time: new Date().getTime()
     }
     localStorage.setItem('Numeric Collonize', JSON.stringify(item));
+
+    var item = {
+        templatetxt: 
+`SELECT * FROM <TABLE> ;
+
+select count(*) from <TABLE>;
+        
+`,
+        findtxt: "<TABLE>",
+        type: "default",
+        time: new Date().getTime()
+    }
+    localStorage.setItem('SQL', JSON.stringify(item));
 
 }
 someDefaultTemplates()
