@@ -133,8 +133,11 @@ function doReplace() {
                 if (findS[i].length < 1) {
                     continue;
                 }
-                var re = new RegExp(findS[i].trim(), 'g');
-                temp = temp.replace(re, lstitemS[i]);
+                //old way 
+                //var re = new RegExp(findS[i].trim(), 'g');
+                //temp = temp.replace(re, lstitemS[i]);
+                //following new way to replace is used to cater regexp character as $ in replace text
+                temp = temp.split(findS[i].trim()).join(lstitemS[i]);
             }
             outtxt += temp + "\n";
         }
