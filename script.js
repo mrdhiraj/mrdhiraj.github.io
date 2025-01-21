@@ -83,6 +83,7 @@ function templateClicked(tname) {
         t = JSON.parse(template)
         document.getElementById("templatetxt").value = t.templatetxt
         document.getElementById("findtxt").value = t.findtxt
+        document.getElementById("mainttxt").value = t.mainttxt
         doReplace()
     }
 }
@@ -105,6 +106,8 @@ function saveTemplate() {
 
 
 function someDefaultTemplates() {
+
+    //BEGIN SELECT
     var item = {
         templatetxt: "SELECT * FROM <TABLE> ;",
         findtxt: "<TABLE>",
@@ -112,7 +115,9 @@ function someDefaultTemplates() {
         time: new Date().getTime()
     }
     localStorage.setItem('SELECT', JSON.stringify(item));
+    //END
 
+    //BEGIN NUMERIC COLONISE
     var item = {
         templatetxt: "<>,",
         findtxt: "<>",
@@ -120,7 +125,9 @@ function someDefaultTemplates() {
         time: new Date().getTime()
     }
     localStorage.setItem('Numeric Collonize', JSON.stringify(item));
+    //END
 
+    //BEGIN SQL
     var item = {
         templatetxt: 
 `SELECT * FROM <TABLE> ;
@@ -133,7 +140,18 @@ select count(*) from <TABLE>;
         time: new Date().getTime()
     }
     localStorage.setItem('SQL', JSON.stringify(item));
+    //END
 
+    //BEGIN DW
+    var item = {
+        templatetxt: "",
+        findtxt: "${TI_,${TT_,${TS_,${TM_,${TD_,${TA_,${TMP_,${V_DAY_ID},}",
+        mainttxt:"DWI.TI_,DWI.TT_,DWS.TS_,DWM.TM_,DWD.TD_,DWA.TA_,ADHOC_DH.TMP_,2050101,",
+        type: "default",
+        time: new Date().getTime()
+    }
+    localStorage.setItem('DW', JSON.stringify(item));
+    //END
 }
 someDefaultTemplates()
 renderTemplates()
